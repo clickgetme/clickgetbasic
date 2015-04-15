@@ -1,0 +1,17 @@
+extends layout2
+
+block content
+	#bodywrap
+		#vhead(data-role='header')
+			h1 
+				span(data-bind='text: vendor.name')
+		include includes/orderview.html
+		include includes/adminnav.html
+		
+
+
+
+
+block scripts
+	script(src='/vendor/#{phone}/vendor.js')
+	script(src='/javascripts/admin.js')

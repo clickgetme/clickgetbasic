@@ -1,0 +1,1 @@
+var vendor ={"name":"James Martine","phone":"6789278387","email":"jamesmartin90@yahoo.com","dinetypes":[{"type":"eatin","name":"Eat In"},{"type":"takeout","name":"Take Out"}],"location":{"address":"1469 highway 42 North","city":"Jackson","state":"GA","zip":"30233","phones":[{"type":"store","number":"6789278387"}]}}

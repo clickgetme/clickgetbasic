@@ -1,0 +1,141 @@
+<!-- adminnav.html -->
+
+<div id="adminmenuwrap">
+
+    <ul id="adminmenu">
+        <li><a href="#">Admin</a>
+            <ul>
+                <li><a href="#">Users</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Options</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Reports</a>
+                    <ul>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">History</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Views</a>
+            <ul>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Incomming</a></li>
+                <li><a href="#">Proccessing</a></li>
+                <li><a href="#">Ready</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+
+<div data-role="popup" id="reportMenuPopup" data-theme="b">
+    <ul data-role="listview" data-inset="true" style="min-width: 150px;">
+        <li data-role="list-divider">Choose a Report</li>
+        <li><a id="orderreport" href="#">History</a></li>
+        <!--<li><a id="orderoptions" href="#">Options</a></li>-->
+        <!--<li><a href='#' id="btschedule" data-rel="popup">Schedule</a></li>-->
+        <li><a id="btcustomer" href="#">Customers</a></li>
+        <!--<li><a href='#' id="users" >Users</a></li>-->
+    </ul>
+</div>
+
+
+<div data-role="popup" id="ordertaker" data-overlay-theme="b" data-tolerance="15,15" data-dismissible="false">
+    <div id="ordertakerheader">
+
+        <h1>Take Order
+                    <a href="#" id="takeorderclose" class="cgbut" data-role="none">Close</a>
+        </h1>
+    </div>
+    <div id="iframewrap">
+        <iframe id="ifordertaker" src="http://" width="400" height="500" seamless=""></iframe>
+    </div>
+</div>
+
+
+<div data-role="popup" id="localorders" class="ui-corner-all ">
+    <h3>Order History</h3>
+
+    <div class="horder">
+        <div class="hohead">
+            <span class="honum">#</span>
+            <span class="honame">Name</span>
+            <span class="hodate">Date Time</span>
+            <span class="hophone">Phone</span>
+            <span class="hostatus">Status</span>
+            <input class="hoselect selectall" type="checkbox" data-role="none" />
+        </div>
+        <div data-bind="foreach: myorders.closedOrders" class="allorders">
+            <div class="horder">
+                <div class="hoithead">
+                    <span class="honum" data-bind="text: number"></span>
+                    <span class="honame" data-bind="text: ordername"></span>
+                    <span class="hodate" data-bind='text: date'></span>
+                    <span class="hophone" data-bind="text: orderphone"></span>
+                    <span class="hostatus" data-bind='text: status'></span>
+                    <input class="hoselect" type="checkbox" data-role="none" />
+                </div>
+                <div class="hoitbody">
+                    <div data-bind="foreach: orderLines" class="hlines">
+                        <div class="hline">
+                            <span data-bind="text: quantity"></span>
+                            <span data-bind="html: itemFormat(item)"></span>
+                        </div>
+
+                    </div>
+                    <div class="hordertotal">
+                        <label>total: &nbsp; <span data-bind="text: total"></span>&nbsp; </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialogcontrol">
+        <a href='#' id="bthistoryclose" data-rel="back" class="cgbut">Close </a>
+    </div>
+
+</div>
+
+
+<div data-role="popup" id="customers" class="ui-corner-all ">
+    <h3>Customers</h3>
+    <div class="customer">
+        <table>
+            <thead>
+                <tr>
+                    <th class="custselect">
+                        <input type="checkbox" id="custall" data-role="none" />
+                    </th>
+                    <th class="custname">Name</th>
+                    <th class="custphone">Phone</th>
+                    <th class="custemail">Email</th>
+                    <th class="custorders">Orders</th>
+                    <th class="custotal">Total</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: customers.customers" class="customers">
+                <tr>
+                    <td class="custselect">
+                        <input class="custs" type="checkbox" data-bind="attr: { 'id': phone }" data-role="none" />
+                    </td>
+                    <td class="custname" data-bind="text: name()"></td>
+                    <td class="custphone"><span data-bind="text: formatPhone(phone())"></span></td>
+                    <td class="custemail" data-bind="text: email"></td>
+                    <td class="custorders"><span data-bind="text: orders"></span></td>
+                    <td class="custotal" data-bind="text: total()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="dialogcontrol">
+        <a href='#' id="btcustclose" data-rel="back" class="cgbut">Close </a>
+    </div>
+</div>
+
+
+
+

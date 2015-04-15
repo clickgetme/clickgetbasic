@@ -1,0 +1,71 @@
+body {
+    font-size: 12px;
+    background-color: #7ac0da;
+}
+span {
+	display: block;
+    padding: 0px 5px;
+	text-shadow: none;
+	color: #fef79a;
+}
+a {
+    display: block;
+    height: 30px;
+     border: 2px solid black;
+  	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	
+    background: #565656; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #565656 0%, #0e0e0e 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#565656), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #565656 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #565656 0%,#0e0e0e 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #565656 0%,#0e0e0e 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #565656 0%,#0e0e0e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    padding: 5px;
+	margin: 5px auto;
+	color: #fef79a;
+    width: 17em;
+    text-decoration:none;
+    
+}
+.name {
+    display: inline-block;
+   width: 15em;
+   text-align: center;
+   
+}
+#namenum span{
+    display: inline-block;
+   width: 15em;
+   text-align: center;
+   
+}
+#custlist {
+	display: block;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	position: absolute;
+	background-color: #7ac0da;
+	
+}
+#namenum{
+	/*width: 180px;*/
+	display: block;
+	float: left;
+	width: 15em;
+
+}
+#cart{
+	font-size: 1.4em;
+	color: #fef79a;
+	margin-right: 4px;
+	width: 1.45m;
+	float: right;
+
+}

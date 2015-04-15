@@ -1,0 +1,48 @@
+<!-- login.html -->
+
+<div id="login"  class="bg_lightblue" >
+    <h3>Login</h3>
+    <div>
+        <p id="vendorName"></p>
+        <p id="vendorPhone"></p>
+    </div>
+    <form class="login">
+<!--
+        <p class="gsinput">
+            <label>User Name:</label>
+            <input id="luserName" type="text"  data-role="none" placeholder="">
+        </p>
+-->
+<!--        <p id="userphone" class="gsinput">
+            <label>User Phone:</label>
+            <input id="uphone" type="text" data-role="none" placeholder="User phone">
+        </p>-->
+        <div id="loginDeviceSelect">
+            <table>
+                <thead>
+                    <tr> 
+                        <th>Role</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody> <tr>
+                <td><select id="usertype"  data-role="none">
+                <option value="admin">admin</option>
+                <option value="user">user</option>
+            </select>
+			</td>
+                <td> <input id="lpassword" type="password" data-role="none" >
+                </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div>
+            <a href="#"  id="lsubmit"> Login </a>
+
+        </div>
+        <div id="loginerror"></div>
+    </form>
+</div>
+

@@ -1,0 +1,71 @@
+﻿
+<div id="createvendor">
+    <table>
+                    
+        <tbody>
+            <tr>
+                <td style="width:5em;">Name:</td>
+                <td><input type="text" name="Name" data-bind="value: name" /> </td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input type="text" name="phone" data-bind="value: phone" /></td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td><input type="text" name="email" data-bind="value: email" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="gsinput ">
+                        <label>Address</label>
+                        <input class="linput " type="text" id="address" data-bind="value: address " placeholder=" # street" required />
+
+                    </div>
+                    <div id="citystatezip">
+                        <div class="gsinput">
+                            <label>city</label>
+                            <input class="linput lcity" type="text" id="city" data-bind="value: city " placeholder=" city" required />
+                        </div>
+
+                        <div class="gsinput">
+                            <label>state </label>
+                            <input class="linput lstate" type="text" id="state" maxlength="2" size="2" data-bind="value: state " required />
+
+                        </div>
+                        <div class="gsinput">
+                            <label>zip </label>
+                            <input class="linput" type="text" id="zip" name="Location zip" maxlength="9" size="9" data-bind="value: zip " placeholder=" zip" required />
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <label>Eat In</label>
+                        <input type="checkbox" data-bind=" checked: eatIn" data-role="none" />
+                        <input type="text" data-bind="value: eatInName"/>
+                        
+                    </div>
+                    <div>
+                        <label>Take Out</label>
+                        <input type="checkbox" data-bind="    checked: takeOut" data-role="none" />
+                        <input type="text" data-bind="value: takeOutName"/> 
+                    </div>
+                    <div>
+                        <label>Delivery</label>
+                        <input type="checkbox" data-bind="    checked: delivery" data-role="none" />
+                        <input type="text" data-bind="value: deliveryName"/>
+                    </div>
+                   
+                    <!-- /ko -->
+                </td>
+            </tr>
+           
+          <tr><td><a href="#" data-bind='click: $root.save' class="ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-left">Save</a></td>
+            <td></td> </tr>
+        </tbody>
+    </table>
+</div>

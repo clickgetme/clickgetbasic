@@ -1,0 +1,560 @@
+<!-- orderview.html -->
+
+<div class="orderview">
+    <div id="vhead" data-role="header">
+        <h1>
+            <span data-bind="text: vendor.name"></span>
+        </h1>
+
+    </div>
+    <canvas id="hidden_screenshot" style="display:none;"></canvas>
+    <div id="ordertakerwrap" class="othide">
+        <!--<div id="otcontrols">
+            <div class="onoff">
+                <input type="checkbox" name="vendorisOnline" id="vendorisOnline" data-role="none" /><label id="onlineLable" for="vendorisOnline">Offline</label>
+                <div id="power"></div>
+            </div>
+            <div id="ordnum">
+                <div>
+                    <label>Next Order Number</label>
+                    <span data-bind="text: $root.myorders.nextOrderNumber"></span>
+                    <a href="#" data-bind="click: $root.myorders.orderReset" data-role="none">Reset</a>
+                </div>
+            </div>
+            <div class="reportmenu"><a id="reportmenu" href="#reportMenuPopup" data-rel="popup" data-transition="slidedown" class="cgbut">Reports</a></div>
+            <div class="takeorder"><a id="takeorder" href="#" class="cgbut">Take Order</a></div>
+            <div class="managemenu"><a id="managemenu" href="#" class="cgbut">Manage Menu</a></div>
+        </div>-->
+
+        <div id="clickgetorders">
+            <h1>Orders</h1>
+
+            <div class="orderviews">
+
+                <div id="orderviewcontrol">
+                    <div id="power">
+                        <label id="lb_power">
+                            <span class=otpower><i class="fa fa-power-off"></i></span>
+                        </label>
+                        <input type="checkbox" id="chk_power" data-role="none" />
+                        <span id="vonlinestat">offline</span>
+                    </div>
+
+                    <ul data-bind="foreach: myorders.views">
+                        <li data-bind="attr: {'id' : '_' + title}" class="viewbut pressed">
+                            <a href="#" data-bind="click: $root.myorders.toggleview" data-role="none">
+                                <span data-bind="text: title"></span>
+                            </a>
+                            <div class="viewcount" data-bind="text:vcount()"></div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="ordersteps">
+                <div class="orders inorders incoming">
+                    <div class="otbar">
+                        <h3>Incoming</h3>
+                    </div>
+                    <div data-bind="foreach: myorders.inOrders" class="inorders">
+                        <div class="order" data-bind="attr: { 'from': from, 'date': date, 'id': id }">
+                            <table style="width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td class="ordernumber">
+                                            <a href="#" class="otopendlg" data-bind="click:$parent.myorders.popOrder"><i class="fa fa-caret-square-o-up"></i></a> 
+                                            <span data-bind="text: number"></span>
+                                        </td>
+                                        <td class="ordername"><span data-bind="text: ordername"></span></td>
+                                        <td class="ordertime" data-bind='text: time'></td>
+                                        <td class="pickuptime" data-bind='text: pickuptime'></td>
+                                        <td class="orderphone"><span data-bind="text: orderphone"></span></td>
+                                        <td class="orderstatus" data-bind='text: status'></td>
+                                        <td class="ordercontrol" rowspan="3">
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.processOrder, enable: process'><span data-bind="    attr: { 'id': 'p' + id() }">Process</span></a>
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.readyIn, visible: external()'><span data-bind="    attr: { 'id': 'ri' + id() }">Ready In</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="orderline" colspan="6">
+                                            <div data-bind="foreach: orderLines" class="lines">
+                                                <div class="line">
+                                                    <span data-bind="text: quantity"></span>
+                                                    <span data-bind="html: itemFormat(item)"></span>
+                                                </div>
+                                            </div>
+                                            <div class="ordertotal">
+                                                <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                            </div>
+                                            <!-- ko if: dinetype() == 'Delivery' -->
+                                            <div class="orderaddress" data-bind="template: { name: 'address-template', data: deliveryLocation }"></div>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="orders proccessorders processing">
+                    <div class="otbar">
+                        <h3>Processing</h3>
+                    </div>
+                    <div data-bind="foreach: myorders.processingOrders" class="proccessorders">
+                        <div class="order" data-bind="attr: { 'from': from, 'date': date }">
+                            <table style="width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td class="ordernumber">
+                                            <a href="#" class="otopendlg" data-bind="click:$parent.myorders.popOrder"><i class="fa fa-caret-square-o-up"></i></a>
+                                            <span data-bind="text: number"></span>
+                                        </td>
+                                        <td class="ordername"><span data-bind="text: ordername"></span></td>
+                                        <td class="ordertime" data-bind='text: time'></td>
+                                        <td class="pickuptime" data-bind='text: pickuptime'></td>
+                                        <td class="orderphone"><span data-bind="text: orderphone"></span></td>
+                                        <td class="orderstatus" data-bind='text: status'></td>
+                                        <td class="ordercontrol" rowspan="2">
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.readyOrder, enable: ready'><span>Ready</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="orderline" colspan="6">
+                                            <div data-bind="foreach: orderLines" class="lines">
+                                                <div class="line">
+                                                    <span data-bind="text: quantity"></span>
+                                                    <span data-bind="html: itemFormat(item)"></span>
+                                                </div>
+                                            </div>
+                                            <div class="ordertotal">
+                                                <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                            </div>
+                                            <!-- ko if: dinetype() == 'Delivery' -->
+                                            <div class="orderaddress" data-bind="template: { name: 'address-template', data: deliveryLocation }"></div>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="orders readyorders ready">
+                    <div class="otbar">
+                        <h3>Ready</h3>
+                    </div>
+                    <div data-bind="foreach: myorders.readyOrders" class="readyorders">
+                        <div class="order" data-bind="attr: { 'from': from, 'date': date }">
+                            <table style="width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td class="ordernumber">
+                                            <a href="#" class="otopendlg" data-bind="click:$parent.myorders.popOrder"><i class="fa fa-caret-square-o-up"></i></a>
+                                            <span data-bind="text: number"></span>
+                                        </td>
+                                        <td class="ordername"><span data-bind="text: ordername"></span></td>
+                                        <td class="ordertime" data-bind='text: time'></td>
+                                        <td class="pickuptime" data-bind='text: pickuptime'></td>
+                                        <td class="orderphone"><span data-bind="text: orderphone"></span></td>
+                                        <td class="orderstatus" data-bind='text: status'></td>
+                                        <td class="ordercontrol" rowspan="2">
+                                            <!-- ko if: dinetype() != 'Delivery' -->
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.closeOrder'><i class="fa fa-sign-out"></i><span>Close</span></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: dinetype() == 'Delivery' -->
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.deliverOrder'><span>Deliver</span></a>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="orderline" colspan="6">
+                                            <div data-bind="foreach: orderLines" class="lines">
+                                                <div class="line">
+                                                    <span data-bind="text: quantity"></span>
+                                                    <span data-bind="html: itemFormat(item)"></span>
+                                                </div>
+                                            </div>
+                                            <div class="ordertotal">
+                                                <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                            </div>
+                                            <!-- ko if: dinetype() == 'Delivery' -->
+                                            <div class="orderaddress" data-bind="template: { name: 'address-template', data: deliveryLocation }"></div>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ko if: myorders.showDelivery() -->
+                <div class="orders deliveryorders delivery">
+                    <div class="otbar">
+                        <h3>Delivery</h3>
+                    </div>
+                    <div data-bind="foreach: myorders.deliveryOrders" class="deliveryOrders">
+                        <div class="order" data-bind="attr: { 'from': from, 'date': date }">
+                            <table style="width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td class="ordernumber">
+                                            <a href="#" class="otopendlg" data-bind="click:$parent.myorders.popOrder"><i class="fa fa-caret-square-o-up"></i></a>
+                                            <span data-bind="text: number"></span>
+                                        </td>
+                                        <td class="ordername"><span data-bind="text: ordername"></span></td>
+                                        <td class="ordertime" data-bind='text: time'></td>
+                                        <td class="pickuptime" data-bind='text: pickuptime'></td>
+                                        <td class="orderphone"><span data-bind="text: orderphone"></span></td>
+                                        <td class="orderstatus" data-bind='text: status'></td>
+                                        <td class="ordercontrol" rowspan="2">
+                                            <!-- ko if: dinetype() != 'Delivery' -->
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.closeOrder'><i class="fa fa-sign-out"></i><span>Close</span></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: dinetype() == 'Delivery' -->
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.arriveDeliveryOrder'><span><i class="fa fa-bell"></i>  &nbsp;Arrived</span></a>
+                                            <a class="statusbutton" data-bind="attr: { 'href': 'tel:' + orderphone() }"><i class="fa fa-phone"></i>  &nbsp; <span>Call</span></a>
+                                            <a href="#" class="statusbutton" data-bind='click: $parent.myorders.closeDeliveryOrder'><i class="fa fa-sign-out"></i>  &nbsp; <span>Close</span></a>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="orderline" colspan="6">
+                                            <div data-bind="foreach: orderLines" class="lines">
+                                                <div class="line">
+                                                    <span data-bind="text: quantity"></span>
+                                                    <span data-bind="html: itemFormat(item)"></span>
+                                                </div>
+                                            </div>
+                                            <div class="ordertotal">
+                                                <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                            </div>
+                                            <!-- ko if: dinetype() == 'Delivery' -->
+                                            <div class="orderaddress" data-bind="template: { name: 'address-template', data: deliveryLocation }"></div>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- /ko -->
+            </div>
+            <div id="onlinecustomrers">
+                <span>customers Online: &nbsp; </span>
+                <span data-bind="text: myorders.liveCustomersCount"></span>
+                
+                
+               
+            </div>
+            <div id="clockpanel" >
+                <table  style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td style="width: 33%"><a href="#" id="adminbutton" class=" statusbutton"><i class="fa fa-caret-square-o-down"></i> &nbsp; Admin</a></td>
+                             <td style="width: 34%"><span id="clock">&nbsp;</span></td>
+                             <td style="width: 33%"><a id="takeorder" href="#" class="statusbutton"><i class="fa fa-bars"></i> &nbsp; Take Order</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                        <a href="#" id="adminbutton" class=" statusbutton"><i class="fa fa-caret-square-o-down"></i> &nbsp; Admin</a>
+
+                
+                
+            </div>
+
+
+        </div>
+            <div id="adminpanel">
+                <a id="btusers" href="#" class="statusbutton"><i class="fa fa-key fa-fw"></i> &nbsp;Password</a>
+                <!-- <a id="btschedule" href="#" class="statusbutton"><i class="fa fa-calendar"></i>   &nbsp; Schedule</a> -->
+                <a id="btoption" href="#" class="statusbutton"><i class="fa fa-cog"></i>  &nbsp; Options</a>
+                <a id="btaccount" href="#" class="statusbutton"><i class="fa fa-tasks"></i> &nbsp; Account</a>
+                <a id="btcustomer" href="#" class="statusbutton"><i class="fa fa-table"></i> &nbsp; Users</a>
+                <a id="bthistory" href="#"  class="statusbutton"><i class="fa fa-history"></i> &nbsp; History</a>
+            </div>
+        <div class="dialogwrapper">
+            <div id="orderpopup" data-bind="with: myorders.popOrderObj" data-role="popup">
+                <div id="poporderdlgwrap">
+                    <div class="otdlghead">
+                        <!-- ko if: status() == 'received' -->
+                        <h3>Incoming</h3>
+                        <!-- /ko -->
+                        <!-- ko if: status() == 'processing' -->
+                        <h3>Processing</h3>
+                        <!-- /ko -->
+                        <!-- ko if: status() == 'ready' -->
+                        <h3>Ready</h3>
+                        <!-- /ko -->
+                        <!-- ko if: status() == 'Delivering' -->
+                        <h3>Delivery</h3>
+                        <!-- /ko -->
+                        <a href="#" id="otclosedlg" ><i class="fa fa-caret-square-o-down"></i></a> 
+                    </div>
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr class="pophead">
+                                <td><i class="fa fa-ticket"></i></td>
+                                <td>Name</td>
+                                <td>Order <i class="fa fa-clock-o"></i></td>
+                                <td>Pick-up <i class="fa fa-clock-o"></i></td>
+                                <td>Phone</td>
+                                <td>Status</td>
+                            </tr>
+                            <tr >
+                                <td class="pordernumber" data-bind="text: number"></td>
+                                <td class="pordername"><span data-bind="text: ordername"></span></td>
+                                <td class="pordertime" data-bind='text: time'></td>
+                                <td class="ppickuptime" data-bind='text: pickuptime'></td>
+                                <td class="porderphone"><span data-bind="text: orderphone"></span></td>
+                                <td class="porderstatus" data-bind='text: status'></td>
+
+                            </tr>
+                            <tr>
+                                <td class="orderline" colspan="6">
+                                    <div data-bind="foreach: orderLines" class="otplines">
+                                        <div class="otpline">
+                                            <span data-bind="text: quantity"></span>
+                                            <span data-bind="html: itemFormat(item)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="ordertotal">
+                                        <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                    </div>
+                                    <!-- ko if: dinetype() == 'Delivery' -->
+                                    <div class="orderaddress" data-bind="template: { name: 'address-template', data: deliveryLocation }"></div>
+                                    <!-- /ko -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="orderpopctrl" colspan="6">
+                                    <a href="#" class="statusbutton" data-bind='click: $parent.myorders.processOrder,  visible: $parent.myorders.popOrderbutton().process' ><span data-bind="    attr: { 'id': 'p' + id() }">Process</span></a>                                  
+                                    <a href="#" class="statusbutton" data-bind='click: $parent.myorders.readyOrder,  visible: $parent.myorders.popOrderbutton().ready'><span>Ready</span></a>
+                                    <a href="#" class="statusbutton" data-bind='click: $parent.myorders.arriveDeliveryOrder,  visible: $parent.myorders.popOrderbutton().arrive'><span><i class="fa fa-bell"></i>  &nbsp;Arrived</span></a>
+                                    <a class="statusbutton" data-bind="attr: { 'href': 'tel:' + orderphone() },  visible: $parent.myorders.popOrderbutton().call"><i class="fa fa-phone"></i>  &nbsp; <span>Call</span></a>                                    
+                                     <a href="#" class="statusbutton" data-bind='click: $parent.myorders.closeOrder,  visible: $parent.myorders.popOrderbutton().close'><i class="fa fa-sign-out"></i><span>Close</span></a>
+                                    <a class="statusbutton" data-bind="attr: { 'href': $parent.myorders.orderLocation() },  visible: $parent.myorders.popOrderbutton().location" target="_blank"> <i class="fa fa-location-arrow"></i> &nbsp; Locate</a>
+                        
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+</div>
+            <script type="text/html" id="address-template">
+
+                <label>Delivery Address</label>
+                <div class="address">
+                    <span data-bind="text: address"></span>
+                    <span data-bind="text: city"></span>
+                    <span data-bind="text: state"></span>
+                    <span data-bind="text: zip"></span>
+                    <div class="addressnote">
+                        <span data-bind="text: note"></span>
+                    </div>
+                </div>
+            </script>
+            <div class="dialogwrapper">
+                <div data-role="popup" id="orderReadyIn">
+
+                    <div class="processmessage">
+                        <a href='#' id="orderReadyclose" class="canceldlg" data-role="none">X</a>
+                        <div class="processhead">Processing ready In</div>
+                        <div class="processbuttons">
+                            <span class="readytime cgbut">5 min</span>
+                            <span class="readytime cgbut">10 min</span>
+                            <span class="readytime cgbut">15 min</span>
+                            <span class="readytime cgbut">20 min</span>
+                            <span class="readytime cgbut">30 min</span>
+                            <span class="readytime cgbut">45 min</span>
+                        </div>
+                        <div class="readymessage">
+                            <input id="readymessage" type="text" placeholder="Enter message" data-role="none" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialogwrapper">
+                <div data-role="popup" id="ordertaker" data-overlay-theme="b" data-tolerance="15,15" data-dismissible="false">
+                    <div id="ordertakerheader">
+
+                        <h1>
+                            Take Order
+                            <!--<a href="#" id="takeorderclose" class="cgbut" data-role="none">Close</a>-->
+                            <a href="#" id="takeorderclose"><i class="fa fa-caret-square-o-down"></i></a>
+                        </h1>
+                    </div>
+                    <div id="iframewrap">
+                        <iframe id="ifordertaker" src="/stylesheets/cgsmile.png" width=" 400" height="500" seamless=""></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="dialogwrapper">
+                <div data-role="popup" id="localorders" class="ui-corner-all ">
+                    <a href='#' id="bthistoryclose" data-rel="back" class="canceldlg" data-role="none">
+                        X
+                    </a>
+                    <h3>Order History</h3>
+
+                    <div class="horder">
+                        <div class="hohead">
+                            <span class="honum">#</span>
+                            <span class="honame">Name</span>
+                            <span class="hodate">Date Time</span>
+                            <span class="hophone">Phone</span>
+                            <span class="hostatus">Status</span>
+                            <input class="hoselect selectall" type="checkbox" data-role="none" />
+                        </div>
+                        <div data-bind="foreach: myorders.closedOrders" class="allorders">
+                            <div class="horder">
+                                <div class="hoithead">
+                                    <span class="honum" data-bind="text: number"></span>
+                                    <span class="honame" data-bind="text: ordername"></span>
+                                    <span class="hodate" data-bind='text: date'></span>
+                                    <span class="hophone" data-bind="text: orderphone"></span>
+                                    <span class="hostatus" data-bind='text: status'></span>
+                                    <input class="hoselect" type="checkbox" data-role="none" />
+                                </div>
+                                <div class="hoitbody">
+                                    <div data-bind="foreach: orderLines" class="hlines">
+                                        <div class="hline">
+                                            <span data-bind="text: quantity"></span>
+                                            <span data-bind="html: itemFormat(item)"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="hordertotal">
+                                        <label>total: &nbsp; <span data-bind="text: total"></span>&nbsp; </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dialogcontrol">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="dialogwrapper">
+                <div data-role="popup" id="customers" class="ui-corner-all ">
+                    <h3>Customers</h3>
+                    <div class="customer">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="custselect">
+                                        <input type="checkbox" id="custall" data-role="none" />
+                                    </th>
+                                    <th class="custname">Name</th>
+                                    <th class="custphone">Phone</th>
+                                    <th class="custemail">Email</th>
+                                    <th class="custorders">Orders</th>
+                                    <th class="custotal">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: customers.customers" class="customers">
+                                <tr>
+                                    <td class="custselect">
+                                        <input class="custs" type="checkbox" data-bind="attr: { 'id': phone }" data-role="none" />
+                                    </td>
+                                    <td class="custname" data-bind="text: name()"></td>
+                                    <td class="custphone"><span data-bind="text: formatPhone(phone())"></span></td>
+                                    <td class="custemail" data-bind="text: email"></td>
+                                    <td class="custorders"><span data-bind="text: orders"></span></td>
+                                    <td class="custotal" data-bind="text: total()"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="dialogcontrol">
+                        <a href='#' id="btcustclose" data-rel="back" class="cgbut">Close </a>
+                    </div>
+                </div>
+            </div>
+            <div class="dialogwrapper">
+                <div data-role="popup" id="usersdlg" class="ui-corner-all ">
+                    <a href='#' id="btuserclose" data-rel="back" class="canceldlg" data-role="none">X</a>
+                    <h3>Users</h3>
+                    <div class="users">
+                        <div class="userhead">
+
+                            <label class="username">User Name</label>
+                            <label class="userid">User Password</label>
+                            <label> </label>
+                        </div>
+                        <ul data-bind="foreach: users.users" class="users">
+                            <li>
+                                <span class="username" data-bind="text: username"></span>
+                                <input class="userpassword" type="text" data-bind="value: password, attr: { 'id': userid }" data-role="none" /> 
+                               
+                                <span class="usercontrol">
+                                    <a href="#" data-bind="attr: { 'userid': userid }" class="saveuser"> Save</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dialogcontrol">
+
+                    </div>
+                </div>
+            </div>
+            <div data-role="popup" id="schedulePopUp" class="ui-corner-all ">
+                <h3>Schedule</h3>
+                <table>
+
+                    <tbody>
+                        <tr>
+                            <th>Open</th>
+                            <th>Day</th>
+                            <th>Start</th>
+                            <th>Close</th>
+                        </tr>
+                        <!-- ko foreach: schedule.days -->
+                        <tr class="schedules">
+                            <td class="scChecked">
+                                <input type="checkbox" data-bind="checked: open" data-role="none" />
+                            </td>
+                            <td> <span data-bind="text: day"></span></td>
+
+                            <td>  <input type="time" data-bind="value: openTime, valueUpdate: 'input'" /></td>
+                            <td>
+                                <input type="time" data-bind="value: closeTime, valueUpdate: 'input'" />
+                            </td>
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+                <div class="savecancle">
+                    <a href='#' id="btSheduleCancel" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-cancel ui-btn-icon-left">Cancel </a>
+                    <a href='#' id="btSheduleSave" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-disk ui-btn-icon-left " data-bind="click: schedule.save">Save</a>
+
+                </div>
+            </div>
+            <div data-role="popup" id="account" class="ui-corner-all ">
+                <h3>Beta Account</h3>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
+            </div>
+            <!--  <embed src="/wav/cash_register_x.wav" autostart="false" width="0" height="0" id="sound1" enablejavascript="true">-->
+        </div>
+</div>

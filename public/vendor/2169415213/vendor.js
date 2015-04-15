@@ -1,0 +1,1 @@
+var vendor={name: "J J's Grab N Go", phone: "2169415213", dinetypes: [{ type: "takeout", name: "Take Out" }], location: { "address": "4282 West 130th Street", "city": "Cleveland", "state": "OH", "zip": "44135", "phones": [{ "type": "Store", "number": "2169415213" }] } };

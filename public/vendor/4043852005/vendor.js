@@ -1,0 +1,1 @@
+var vendor = { name: "STRIP", phone: "4043852005", dinetypes: [{ type: "takeout", name: "Take Out" }, { type: "eatin", name: "Eat in" }, { type: "delivery", name: "Delivery" }], location: { "address": "245 18th Street", "city": "Atlanta", "state": "GA", "zip": "30363", "phones": [{ "type": "store", "number": "4043852005" }, { "type": "Fax", "number": "4043852006" }] } };

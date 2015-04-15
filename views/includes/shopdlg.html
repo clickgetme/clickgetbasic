@@ -1,0 +1,144 @@
+﻿<!-- shopdlg.html -->
+<div class="dialogwrapper" style="display: none">
+    <div id="shoppingdetails" class="bg_lightblue">
+        <a href="#" id="shcancel" class="canceldlg" title="close" data-role="none">X</a>
+        <h3>Order Details</h3>
+                <ul data-bind="foreach: cart.lines" class="shorderlines">
+                    <li>
+                        <div class="shorderline">
+                            <div class="clearfix"></div>
+                            <div class="shquantity" data-bind='text: quantity'></div>
+                            <div class="shitem" data-bind="html: itemFormat(item)"></div>
+                            <div class="shsub" data-bind='text: subtotal'></div>
+                            <div class="shdel"><a href="#" data-bind='click: $parent.cart.removeLine' data-role="none"><i class="fa fa-trash-o"></i></a></div>
+                        </div>
+                    </li>
+                </ul>
+        <a href="#" id="shclear" title="Clear Order" class="cgbut" data-bind='click: $root.cart.clearLines' data-role="none"><i class="fa fa-refresh"></i> &nbsp; Remove All</a>
+    </div>
+</div>
+<div class="dialogwrapper" style="display:none">
+    <div id="guestsignin">
+        <h3>Order for</h3>
+        <div class="scustomer">
+            <div class="gsinput">
+                <label>Name</label>
+                <input type="text" id="guestname" name="name" data-bind="value:cart.guestName " placeholder="Name" required data-role="none" />
+            </div>
+            <div class="gsinput">
+                <label>Phone Number</label>
+                <input type="tel" id="guestphone" name="phone" class="phone" data-bind="value: cart.guestPhone" placeholder=" Phone Number " required data-role="none" onkeypress="return checkIt(event)" />
+            </div>
+            <div id="gsdinetype" class="gsinput">
+                <label>Dine Options</label>
+                <div id="gsdinopt">
+                    <a href="#" class="dineopt" id="takeout" data-role="none" data-bind="text: cart.takeOut().name, visible: cart.takeOut().enabled"></a>
+                    <a href="#" class="dineopt" id="eatin" data-role="none" data-bind="text: cart.eatIn().name, visible: cart.eatIn().enabled"></a>
+                    <a href="#" class="dineopt" id="delivery" data-role="none" data-bind="text: cart.delivery().name, visible: cart.delivery().enabled"></a>
+                </div>
+                <div class="sdt">
+                    <span class="dinetype" data-bind="text: cart.dinetype, click: cart.sendGuest  "></span>
+                </div>
+            </div>
+
+            <div class="gsinput" data-bind="visible: cart.takeOut().name == cart.dinetype() ">
+                <label for="pickuptime">Pick Up Time </label>
+                <input type="time" id="pickuptime" name="pickuptime" data-bind="value: cart.pickupTime" data-role="none" />
+                <!--<input name="pickuptime" id="pickuptime" type="date"  data-bind="value: cart.pickupTime"  data-role="datebox" data-options='{"mode": "timebox"}'>-->
+            </div>
+
+        </div>
+        <div id="gscontrol">
+            <a id="gscancel" href="#" class="cgbut">Cancel</a>
+            <a id="gsok" class="cgbut" href='#' data-bind="click: cart.sendGuest " style="color: limegreen">OK</a>
+        </div>
+    </div>
+</div>
+<div class="dialogwrapper" style="display:none">
+    <div id="guestregister">
+        <h3>Register</h3>
+        <div class="scustomer">
+            <div class="gsinput">
+                <label><i class="fa fa-user"></i>&nbsp;Customer Name</label>
+                <input type="text" id="regname" name="name" data-bind="value: cart.guestName " placeholder="Name" required data-role="none" />
+            </div>
+            <div class="gsinput">
+                <label><i class="fa fa-mobile"></i>&nbsp; Phone Number</label>
+                <input type="tel" id="regphone" name="phone" class="phone" data-bind="value: cart.guestPhone" placeholder=" Phone Number " required data-role="none" onkeypress="return checkIt(event)" />
+            </div>
+        </div>
+        <div class="gscontrol">
+            <a id="regcancel" href="#" class="cgbut">Cancel</a>
+            <a id="regok" class="cgbut" href='#' data-bind="click: cart.regGuest ">OK</a>
+        </div>
+    </div>
+</div>
+<div class="dialogwrapper">
+    <div id="offlinesignin">
+        <h3>Customer</h3>
+        <div class="scustomer">
+            <p><input type="text" id="offlinename" title="name" name="name" placeholder=" Name" /></p>
+            <p><input type="text" id="offlinephone" title="phone Number" name="phone" placeholder=" Phone " /></p>
+            <p>
+                <label for="pickuptime">Pick Up </label>
+                <input type="datetime-local" id="pickupdatetime" name="phone" data-bind="value: cart.pickupTime" />
+            </p>
+            <p><label><a class="ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-left" href='#' data-mini="true" data-bind="click: cart.sendoffline ">Send Order</a></label></p>
+        </div>
+    </div>
+</div>
+<div class="dialogwrapper">
+    <div id="thankyou">
+        <div id="tyframe">
+            <h2>Thanks for Ordering</h2>
+            <h3 data-bind="text: vendor.name"></h3>
+            <img id="cgsmile" alt="CGSmile" src="/styles/cgsmile.png" />
+            <img id="cgtag" alt="CGTag" src="/styles/clickgetmetag.png" />
+            <p></p>
+        </div>
+    </div>
+</div>
+<div class="dialogwrapper">
+    <div id="offlineOrders">
+        <div class="orders">
+            <div class="ui-bar ui-bar-a">
+                <h3>Incoming</h3>
+            </div>
+            <div data-bind="foreach: cart.offlineOrders" class="inorders">
+                <div class="order" data-bind="attr: { 'from': from, 'date': date, 'id': id }">
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td class="ordernumber" data-bind="text: number"></td>
+                                <td class="ordername"><span data-bind="text: ordername"></span></td>
+                                <td class="ordertime" data-bind='text: time'></td>
+                                <td class="pickuptime" data-bind='text: pickuptime'></td>
+                                <td class="orderphone"><span data-bind="text: orderphone"></span></td>
+                                <td class="orderstatus" data-bind='text: status'></td>
+                                <td class="ordercontrol" rowspan="1">
+                                    <a href="#" class="statusbutton" data-role="button" data-mini="true" data-bind='click: $parent.myorders.processOrder, enable: process'><span>Process</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="orderline" colspan="5">
+                                    <div data-bind="foreach: orderLines" class="lines">
+                                        <div class="line">
+                                            <span data-bind="text: quantity"></span>
+                                            <span data-bind="html: itemFormat(item)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="ordertotal">
+                                        <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br>
+            </div>
+
+        </div>
+    </div>
+</div>

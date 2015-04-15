@@ -1,0 +1,17 @@
+extends layout2
+
+block content
+	img#cgsmile1(alt='CGSmile', src='/styles/cgsmile.png')
+	div#clickgetme.loading
+		div#menus
+		include includes/shoppingcart.html
+	include includes/options.html
+	include includes/order.html
+	include includes/user.html
+	include includes/register.html
+
+block scripts
+	script(src='/javascripts/register.js')
+	script(src='/vendor/#{phone}/vendor.js')
+	script(src='/javascripts/shoppingcart.js')
+	script(src='/javascripts/buyerprocess.js')

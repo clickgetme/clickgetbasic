@@ -1,0 +1,1 @@
+var vendor ={"name":"Michael Chapple","phone":"3185470481","email":"chappleproductions@yahoo.com","dinetypes":[{"type":"eatin","name":"Eat In"},{"type":"takeout","name":"Take Out"},{"type":"delivery","name":"Delivery"}],"location":{"address":"175 Memorial Dr","city":"Atlanta","state":"Ga","zip":"30312","phones":[{"type":"store","number":"3185470481"}]}}

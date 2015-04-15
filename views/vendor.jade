@@ -1,0 +1,17 @@
+extends layout2
+
+block content
+    section(class="featured")
+      div(class="content-wrapper")
+        div#menus
+
+    section(class="main-content")
+      include includes/shoppingcart.html
+      include includes/orderlist.html
+      include includes/options.html
+
+block scripts
+    script(src='/vendor/#{phone}/menu.js')
+    script(src='/vendor/#{phone}/shoppingcart.js')
+    script(src='/vendor/#{phone}/orderlist.js')
+    script(src='/vendor/#{phone}/process.js')

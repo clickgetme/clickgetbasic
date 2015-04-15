@@ -1,0 +1,1 @@
+var vendor = { name: "BYLO GYRO", phone: "2162528670", dinetypes: [{ type: "takeout", name: "Take Out" }], online: false, location: { "address": "14007 Puritas Ave", "city": "Cleveland", "state": "OH", "zip": "44135", "phones": [{ "type": "tel", "number": "2162528670" }] } };

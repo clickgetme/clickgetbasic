@@ -1,0 +1,139 @@
+﻿<!-- order.html -->
+<div class="dialogwrapper">
+    <div data-role="popup" id="orderDialogPage" class="ui-corner-all bg_lightblue">
+        <a  href='#' id="btorderclose"  class="canceldlg" data-role="none">X</a>
+        <div data-role="content">
+            <div id="orderhead">
+                <span data-bind="text: order.name"></span><span>&nbsp;your order&nbsp;</span>
+                <span data-bind='text: order.status'></span>
+            </div>            
+            <div class="p" id="idp">
+                <table>
+                    <thead>
+                        <tr class="orderhead">
+                            <td colspan="4"><span data-bind="text: order.vendor.name"></span>&nbsp;Order</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 5%;">#</td>
+                            <td style="width: 75%">Item</td>
+                            <td style="width: 10%">Price</td>
+                            <td style="width: 10%">Sub</td>
+                        </tr>
+                    </thead>
+                    
+                    <tbody data-bind="foreach: order.lines" class="orderbody">
+                        <tr>
+                            <td style="width: 5%">
+                                <span data-bind='text: quantity'></span>
+                            </td>
+                            <td style="width: 75%">
+                                <span data-bind="html: itemFormat(item)"></span>
+                            </td>
+                            <td style="width: 10%">
+                                <span data-bind='text: price'></span>
+                            </td>
+                            <td style="width: 10%">
+                                <span data-bind='text: subtotal'></span>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"><div class="totalnumber"><span class="ototal" data-bind='text: "Total: " + order.total()'></span>
+                                                
+                                                <span class="onum" data-bind='text: "Order #:" + order.number()'></span>
+                                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><div class="clockmessage"><span id="clock">&nbsp;</span> <span class="omessage" data-bind='text: order.message'></span></div></td>
+                        </tr>
+                        <!-- ko if: order.dinetype() == 'Delivery' -->
+                        <tr>
+                            <td colspan="4">
+                            <div class="orderaddress" data-bind="template: {name: 'address-template', data: order.deliveryLocation() }"></div>
+                                </td>
+                        </tr>
+                                        <!-- /ko --> 
+                    </tfoot>
+                </table>
+            </div>
+            <div class="dialogcontrol">
+                <!--<a  href='#' id="btorderclose"  class="cgbut"> Close </a>-->
+                <!-- ko if: (order.status()=='received') -->
+                <a  href='#' id="btordercancel" class="cgbut" data-bind="attr: { 'orderId': order.id }" >Cancel</a>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dialogwrapper">
+    <div data-role="popup" id="offlineOrderDialog" class="ui-corner-all">
+        <div data-role="header">
+            <div class="ui-title" id="Div1"  data-bind="attr: { 'status': status }">
+                <span data-bind="text: order.name"></span><span>&nbsp; your order is &nbsp;</span>
+                <span data-bind='text: order.status'></span>
+            </div>
+            
+        </div>
+        <div data-role="content">
+            <div class="p" id="Div2">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="4" class="orderhead"><span data-bind="text: order.vendor.name"></span>&nbsp; Order</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%">#</td>
+                            <td style="width: 40%">Item</td>
+                            <td style="width: 20%">Price</td>
+                            <td style="width: 20%">Subtotal</td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: order.lines" class="orderbody">
+                        <tr>
+                            <td style="width: 10%">
+                                <span data-bind='text: quantity'></span>
+                            </td>
+                            <td style="width: 40%">
+                                <span data-bind="html: itemFormat(item)"></span>
+                            </td>
+                            <td style="width: 20%">
+                                <span data-bind='text: price'></span>
+                            </td>
+                            <td style="width: 20%">
+                                <span data-bind='text: subtotal'></span>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total:</td>
+                            <td><span data-bind='text: order.total'></span></td>
+                            <td><span id="Span1">&nbsp;</span></td>
+                            <td>
+                            </td>
+
+                        </tr>
+                        
+                    </tfoot>
+                </table>
+            </div>
+            <a  href='#' id="btofflineclose" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">&nbsp; OK &nbsp; </a>
+            <a  href='#' id="btofflineCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-bind="attr: { 'orderId': order.id }" >Cancel</a>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="address-template">
+    <div class="location">
+        <label>Delivery &nbsp; </label>
+        <span data-bind="text: name"></span>
+        <span data-bind="text: address"></span>
+        <span data-bind="text: city"></span>
+        <span data-bind="text: state"></span>
+        <span data-bind="text: zip"></span>
+        <!--<span data-bind="text: note"></span>-->
+    </div>
+</script>

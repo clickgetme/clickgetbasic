@@ -1,0 +1,32 @@
+﻿<!-- schedule.html -->
+<div class="dialogwrapper" style="display: none">
+    <div data-role="popup" id="schedulePopUp" class="ui-corner-all ">
+        <h3>Schedule</h3>
+<table>
+            
+    <tbody>
+        <tr>
+            <th>Open</th>
+            <th>Day</th>
+            <th>Start</th>
+            <th>Close</th>
+        </tr>
+        <!-- ko foreach: schedule.days -->
+        <tr  class="schedules">
+            <td class="scChecked">
+                <input type="checkbox" data-bind="checked: open" data-role="none"/></td>
+            <td> <span data-bind="text: day"></span></td>
+                    
+            <td>  <input type="time" data-bind="value: openTime, valueUpdate: 'input'" data-role="none" /></td>
+            <td>
+                <input type="time" data-bind="value: closeTime, valueUpdate: 'input'" data-role="none" /></td>
+        </tr>
+        <!-- /ko -->
+    </tbody>
+</table>
+        <div class="savecancle">
+        <a  href='#' id="btSheduleCancel"   data-rel="back" class="cgbut">Cancel </a>
+            <a  href='#' id="btSheduleSave" class="cgbut " data-bind="click: schedule.save" >Save</a>
+            
+    </div>
+</div>

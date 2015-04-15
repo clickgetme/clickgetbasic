@@ -1,0 +1,12 @@
+extends layout2
+
+block content
+	#bodywrap
+		section(class="main-content")
+			div(class="content-wrapper")
+				include includes/orderview.html
+	include includes/login.html
+block scripts
+	script(src='/vendor/#{phone}/vendor.js')
+	script(src='/javascripts/vendororder.js')
+	script(src='/javascripts/orderview.js')

@@ -1,0 +1,13 @@
+﻿extends layout2
+
+block content
+	#bodywrap
+		section(class="featured")
+			div(class="content-wrapper")
+		section(class="main-content")
+			include includes/login.html
+body
+
+block scripts
+	script(src='/vendor/#{phone}/vendor.js')
+	script(src='/javascripts/login.js')

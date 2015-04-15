@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'node-inspe' ]
+2 info using npm@1.2.18
+3 info using node@v0.10.4
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\package.json
+6 warn package.json clickget.me@2.0.0 No README.md file found!
+7 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\aws-sdk\package.json
+8 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\azure-storage\package.json
+9 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\connect\package.json
+10 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\everyauth\package.json
+11 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\express\package.json
+12 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\jade\package.json
+13 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\jquery\package.json
+14 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\less-middleware\package.json
+15 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\mkdirp\package.json
+16 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\mongoose\package.json
+17 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\nconf\package.json
+18 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\nodemailer\package.json
+19 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\ordertaker\package.json
+20 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\recaptcha\package.json
+21 verbose read json C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\node_modules\socket.io\package.json
+22 warn package.json ordertaker@0.0.1 No README.md file found!
+23 verbose from cache C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic\package.json
+24 info shrinkwrap file "C:\\Users\\ClickGetMe\\Documents\\My Web Sites\\clickgetbasic\\npm-shrinkwrap.json"
+25 verbose readDependencies returned deps { express: '3.1.0',
+25 verbose readDependencies returned deps   jade: '0.28.1',
+25 verbose readDependencies returned deps   'less-middleware': '0.1.9',
+25 verbose readDependencies returned deps   nconf: '0.6.7',
+25 verbose readDependencies returned deps   'socket.io': '0.9.13',
+25 verbose readDependencies returned deps   everyauth: 'https://github.com/bnoguchi/everyauth/tarball/express3',
+25 verbose readDependencies returned deps   recaptcha: '1.2.0' }
+26 verbose cache add [ 'node-inspe', null ]
+27 verbose cache add name=undefined spec="node-inspe" args=["node-inspe",null]
+28 verbose parsed url { protocol: null,
+28 verbose parsed url   slashes: null,
+28 verbose parsed url   auth: null,
+28 verbose parsed url   host: null,
+28 verbose parsed url   port: null,
+28 verbose parsed url   hostname: null,
+28 verbose parsed url   hash: null,
+28 verbose parsed url   search: null,
+28 verbose parsed url   query: null,
+28 verbose parsed url   pathname: 'node-inspe',
+28 verbose parsed url   path: 'node-inspe',
+28 verbose parsed url   href: 'node-inspe' }
+29 silly lockFile 001e98fd-node-inspe node-inspe
+30 verbose lock node-inspe C:\Users\ClickGetMe\AppData\Roaming\npm-cache\001e98fd-node-inspe.lock
+31 silly lockFile 001e98fd-node-inspe node-inspe
+32 silly lockFile 001e98fd-node-inspe node-inspe
+33 verbose addNamed [ 'node-inspe', '' ]
+34 verbose addNamed [ null, '' ]
+35 silly lockFile 39a9ce18-node-inspe node-inspe@
+36 verbose lock node-inspe@ C:\Users\ClickGetMe\AppData\Roaming\npm-cache\39a9ce18-node-inspe.lock
+37 silly addNameRange { name: 'node-inspe', range: '', hasData: false }
+38 verbose url raw node-inspe
+39 verbose url resolving [ 'https://registry.npmjs.org/', './node-inspe' ]
+40 verbose url resolved https://registry.npmjs.org/node-inspe
+41 info trying registry request attempt 1 at 15:31:43
+42 http GET https://registry.npmjs.org/node-inspe
+43 http 404 https://registry.npmjs.org/node-inspe
+44 silly registry.get cb [ 404,
+44 silly registry.get   { date: 'Tue, 27 Jan 2015 20:31:51 GMT',
+44 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+44 silly registry.get     'content-type': 'application/json',
+44 silly registry.get     'cache-control': 'max-age=0',
+44 silly registry.get     'content-length': '52',
+44 silly registry.get     'accept-ranges': 'bytes',
+44 silly registry.get     via: '1.1 varnish',
+44 silly registry.get     age: '0',
+44 silly registry.get     'x-served-by': 'cache-iad2140-IAD',
+44 silly registry.get     'x-cache': 'MISS',
+44 silly registry.get     'x-cache-hits': '0',
+44 silly registry.get     'x-timer': 'S1422390711.729272,VS0,VE13',
+44 silly registry.get     'keep-alive': 'timeout=10, max=50',
+44 silly registry.get     connection: 'Keep-Alive' } ]
+45 silly lockFile 39a9ce18-node-inspe node-inspe@
+46 silly lockFile 39a9ce18-node-inspe node-inspe@
+47 error 404 'node-inspe' is not in the npm registry.
+47 error 404 You should bug the author to publish it
+47 error 404
+47 error 404 Maybe try 'npm search inspe'
+47 error 404
+47 error 404 Note that you can also install from a
+47 error 404 tarball, folder, or http url, or git url.
+48 error System Windows_NT 6.1.7601
+49 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "node-inspe"
+50 error cwd C:\Users\ClickGetMe\Documents\My Web Sites\clickgetbasic
+51 error node -v v0.10.4
+52 error npm -v 1.2.18
+53 error code E404
+54 verbose exit [ 1, true ]

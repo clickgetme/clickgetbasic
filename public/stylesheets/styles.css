@@ -1,0 +1,1904 @@
+html, body {
+	height: 100%;
+	padding-bottom: 0;
+}
+
+#dinetype{
+	
+	top: 2px;
+	padding: 3px 2px;
+	margin: 0 5px;
+}
+.titlebar {
+	background: black;
+	padding: 2px 0;
+	height: 80px;
+}
+.titlebar .vendorname{
+	display: block;
+	background: whitesmoke;
+	padding: 0 10px;
+	font-size: 16px;
+	border: 1px solid;
+	margin: 5px;
+	text-align: center;
+	color: black;
+	
+}
+.ui-collapsible-content {
+	background-color: blue;
+}
+
+.groupdiv{
+	background: lightblue;
+	padding-left: 10px;
+
+}
+.groupdiscription{
+	text-align: center;
+}
+#orderhistory {
+	border: 1px solid #666;
+	color: white;
+	padding:0 10px;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 2px 10px;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bde5f6), to(#666));
+	background: -moz-linear-gradient(top, #bde5f6, #666);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bde5f6', endColorstr='#666666');
+
+	
+}
+
+#dcombo {
+	min-width: 250px;
+	padding:0 5px;
+}
+.combowrap{
+	display: block;
+	position: relative;
+}
+#dcombo h3{
+	font-size: 16px;
+	text-align: center;
+	background-color: #303030;
+	border: 5px solid black;
+	padding:0;
+	margin:0 ;
+	border-radius: .5em .5em 0 0;
+}
+#dcombo tr div{
+	
+	font-size: 12px;
+}
+#dcombo th {
+	
+	font-size: 12px;
+	font-weight: normal;
+	margin:0;
+	padding:0;
+}
+#dcombo table{
+	background-color: #202020;
+	position: relative;
+	left:0;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+}
+#idpquantity{
+	background: grey
+}
+#dcombo input{
+	width: 3em;
+}
+#idpsubtotal, #idpprice {
+	display: inline-block;
+	border:  solid black;
+	padding: 5px;
+	background: grey
+}
+#dcombo table{
+	padding:0 2px;
+}
+.controlheader {
+	padding:0;
+	margin:0;
+}
+
+#vendorstatus{
+	position: relative;
+	display: inline-block;
+	margin: 4px;
+	padding:0 5px;
+	background: #101010;
+	vertical-align: middle;
+	text-shadow: none !important;  
+	border: solid 2px grey;
+    letter-spacing:1px;
+	top: -42px;
+	left: 120px;
+}
+.phonediv {
+	display: block;
+	position: relative;
+	height: 35px;
+	border: solid 2px grey;
+	width: 100px;
+	left: 5px;
+}
+.phonediv label {
+	text-shadow: none !important;
+	color: white;
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	font-size: 10px;
+	text-align: center;
+}
+.vendorphone{
+	position: relative;
+	display: inline-block;
+	top: 14px;
+	width: 100%;
+	height: 18px;
+	text-align: center;
+	
+	font-size: 12px;
+	background: whitesmoke;
+	vertical-align: middle;
+	text-shadow: none !important;
+}
+h6 {
+	margin-top: 1px;
+}
+.dialogwrapper{
+    display: none;
+}
+#orderDialogPage{
+  padding-top:0px;
+  margin:0px;
+}
+#orderDialogPage div {
+  margin-left:5px;
+  margin-right:5px;
+}
+ #orderhead {
+	 border: solid lightyellow;
+  text-align: center;
+  padding: 5px 10px;
+  margin-bottom: 5px;  
+  background:#303030; 
+  color: lightblue;
+  -webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+ 
+}
+
+#orderDialogPage table{
+  margin-left: 2px;
+  margin-right:2px;
+}
+
+#orderDialogPage h3{
+  background:red;
+  text-align:center;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+#menus{
+  padding-left:2px;
+  padding-right:2px;
+  padding-bottom:4px;
+  background-color:#000;
+  margin-bottom: 5px;
+  
+}
+
+.menu .ui-collapsible-content div div{
+	vertical-align: top;
+}
+.orderhead{
+	text-align: center;
+	background: #303030;
+	
+}
+
+.orderbody{
+  color:black;
+  text-shadow: none !important; 
+  background-color:whitesmoke;
+  padding-left:2px;
+  padding-right:2px;  
+}
+.orderbody tr:nth-child(odd)		{
+	background-color:#eee;
+}
+.orderbody tr:nth-child(even)		{
+	background-color:#fff;
+}
+.orderbody tr{
+	vertical-align: top;
+}
+#clock {
+	position: relative;
+	border: solid 1px #303030;
+	padding: 2px 5px;
+	font-size: 14px;
+	
+}
+.onum {
+	float: right;
+}
+.omessage{
+	color: red;
+	float:right;
+}
+.online, .ordernum{
+	display: inline-block;
+	width: 120px;
+	height: 100px;
+	padding: 10px;
+	background-color: lightgrey
+}
+.ctable td{
+	padding: 4px;
+}
+.ordernum span{
+	display: block;
+	font-size: large;
+	border: inset ;
+	
+	padding: 3px;
+}
+.ordernum a{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.online h5 {
+}
+.orders{
+border: solid thin;
+}
+.orders div{
+   padding:0;
+   margin-bottom:0; 
+   margin:0px;
+   text-align: center;
+   
+}
+.order {
+  width:100%;
+  border: solid thin
+
+}
+.inorders{
+	
+}
+.inorders table{
+	background: pink;
+	overflow: auto;
+}
+.inorders .orderaddress{
+	background-color: red;
+}
+.proccessorders table{
+	background-color: lightyellow;
+	overflow: auto;
+}
+.proccessorders .orderaddress{
+	background-color: yellow;
+	
+}
+.readyorders table{
+	background-color: lightgreen; 
+	overflow: auto;
+}
+.readyorders .orderaddress{
+	background-color: lime;
+}
+hr {
+  margin-top:2px;
+  margin-bottom:2px;
+}
+.ordercontrol{
+  width:4em
+}
+.order div {
+  float: left;  
+  padding-left: 2px;
+}
+.ordertotal{
+  border-top: solid thin;
+  padding-left:3px;
+  padding-right:2px;
+}
+.lines{
+  padding-left:1em;
+  border-top: solid 1px;
+  padding-right:2em;
+  width:100%;
+  
+}
+.messages {
+  right:100px;
+}
+.clear { /* generic container (i.e. div) for floating cgbuttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+.ordernumber{
+  width:2em
+}
+.ordername{
+    width:6em;
+}
+.ordertime{
+    width:6em;   
+}
+.orderstatus{
+  width:5em;
+}
+.orderphone{
+  width:5em;
+}
+.orderline{
+    width:100%;
+    font-weight:normal;
+}
+
+.statusbutton {
+	display: block;
+	position: relative;
+	padding: 2px;
+    width:60px;
+	font-size: 12px;
+	margin: 0 5px;
+    text-shadow: none !important;
+	text-decoration: none;
+    border: solid 1px black;
+    font-weight: normal;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top, #666, #000);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+
+.item{
+  padding: 3px;
+font-weight:normal;
+}
+
+.item .prices{
+  font-weight:normal;
+  display:inline;
+  padding-left:1px;
+  padding-right:1px;
+  font-size:90%;   
+}
+.item .prices span{
+  padding-left:1px;
+  padding-right:1px; 
+}
+.itn{
+	background: white;
+	padding: 0 2px;
+}
+
+#notecontainer{
+  position:relative;
+  padding-left:2px;
+  padding-right:2px;
+  border: solid thin black
+ 
+}
+#itemnote p {
+	padding:0;
+	margin:0 auto;
+}
+#itemnote a {
+	display: block;
+	width: 225px;
+	text-align: center;
+	margin:0 auto;
+  
+}
+#notecontainer textarea {  
+padding:0 5px;
+}
+
+
+.shoppingcarthead {
+	display: block;
+	padding-left: 5px;
+	padding-top: 12px;
+	padding-bottom:0;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 0;
+	height: 60px;
+	bottom:0;
+}
+.shoppingcarthead span{
+  float:left;
+  padding-right:2px;
+  position:relative;
+}
+#orderinfo {
+	position: absolute;
+	top: 0;
+}
+.orderinfo {
+	position: relative;
+	top: 5px;
+}
+.shoppingcarthead a{
+  display:inline-block;
+  border: 2px solid grey;
+  top: 2px;
+}
+.cgsh span{
+  position: relative;
+  top: 12px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  color:black;
+  text-shadow: none !important;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  vertical-align:text-top;
+  
+}
+
+.cgsh {
+	display: inline-block;
+	position: relative;
+	margin:0;
+	padding: 0;
+	top: 10px;
+	height: 36px;	
+	border: solid 2px grey;
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.cgsh label{
+  width:100%;
+  position: absolute;
+  font-size:10px;
+  color:whitesmoke;
+   text-align: center;
+  text-shadow: none !important;
+ 
+}
+
+#cclabel{
+ 
+}
+#ccval{ 
+width: 32px;
+
+}
+#ctlabel{  
+         
+}
+#ctval{ 
+width: 48px;
+
+}
+#shclear{
+  color: lightblue;
+  
+  
+}
+#shsend{
+	
+  
+}
+.shoderline {
+	width:100%; height:8em; overflow:auto; background-color:white;
+}
+h3 span{
+	display: block;
+	padding-bottom: 2px;
+	padding-top:2px;
+	font-weight: bold;
+	
+}
+.dsize {
+	width: 100%;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;	
+}
+.dsize span{
+	
+}
+#buttoncontainer {
+}
+#buttoncontainer .cgcancel {
+	color: lightblue;
+}
+#buttoncontainer .cgsubmit {
+	color: #fef79a; 
+}
+#itemnotetext{
+	background-color: lightyellow;
+	color: black;
+	text-shadow: none !important;
+}
+.cgbut {
+	display: inline-block;
+	border: 1px solid #333;
+	padding:0 10px;
+	margin: 5px;
+	text-decoration: none;
+	font-weight: normal;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top, #666, #000);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+.cgsmallbut {
+	border: 1px solid black;
+	padding:0;
+	margin: 2px;
+	height: 14px;
+	font-size: 14px;
+	font-weight: normal;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top, #666, #000);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+#buttoncontainer{
+	border-top: thin solid black;
+	padding: 5px;
+}
+.sizes {
+	
+}
+.sizes .dsize label { 
+  border: 2px solid black;
+  -webkit-border-radius: .5em; 
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#010));
+  background: -moz-linear-gradient(top, #666, #010);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+  display: inline-block;
+  margin: 2px 5px 1px 5px;
+  padding: 2px 5px 2px 10px;
+  width: 235px;
+  color: blue;
+  cursor: pointer;
+}
+.dsize input[type=radio] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+.dsize label .sizeprice{
+	float: right;
+}
+
+.itp .size{
+	text-align: left;
+}
+.size {
+	display: block;
+	padding: 2px 4px 2px 4px;
+	width:100%;
+	border: 1px solid white
+}
+.size {
+	padding-right: 5px;
+}
+.sizename{
+	padding: 0 5px 0 0;
+}
+.sizeprice{
+    padding: 0 0 0 10px;
+}
+
+.includes, selects {
+	display: block;
+	width: 230px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.includedselected {
+	display: none;
+}
+.includedselected span {
+	display: none;
+	
+}
+.include {
+	display: inline-block;
+	width: 220px;
+	border: 1px solid black;
+}
+.includes table{
+	display: inline-block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+.include input[type="checkbox"] {
+	display: none;
+	
+	
+}
+.include input[type="checkbox"] + div {
+	border: outset;
+	border-radius: .5em;
+	-webkit-border-radius:.5em; 
+	-moz-border-radius: .5em;
+	background: #303030;
+	color: #888;
+}
+
+.include input[type="checkbox"]:checked + div {
+	color: green;
+	border-radius: .5em;
+	-webkit-border-radius:.5em; 
+	-moz-border-radius: .5em;
+	background-color: lightyellow;
+	border: inset;
+}
+
+
+.pricename, .includename{
+	float: left;
+	
+	
+}
+.pricename .includeprice{
+	float: left;
+	padding-left: 4px;
+	
+}
+.pricename label{
+ width: 100%;
+	margin: 0;
+	
+}
+.include div  {
+	width: 100%;
+	
+}
+.include select  {
+	width: 110px;
+	
+}
+
+.includeprice{
+	position: relative;
+	top:-20px;
+	left: 175px;
+	height: 0
+	
+}
+.selects + div{
+	padding-top: 5px;
+	
+}
+.selects div{	
+	display: block;
+	padding:0 0 0 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	border: 2px solid;
+	width: 220px;
+	margin-top: 5px
+}
+.selects div span{
+	width: 130px;
+	padding-right: 6px;
+}
+.selects div select {
+	-webkit-appearance: none;
+	top: 0;
+	float: right;
+	background-color: lightyellow;
+	width: 140px;
+	height: 20px;
+	color: green;
+	line-height: 20px;
+	
+}
+.includeprice {
+	float: left;
+	padding-left: 4px;
+	padding-top: 0;
+	color: red;
+}
+.pricename span{
+	background-color: black;
+}
+#idp caption {
+	background: whitesmoke;
+	width: 100%;
+	color: black;
+}
+#idp table tfoot tr td {
+	padding: 0;
+	margin: 0;
+	
+}
+#idp table {
+	width: 100%;
+	border: solid;
+	padding: 2px;
+}
+#guestsignin {
+	
+	padding: 10px;
+	width: 250px;
+}
+#guestsignin h3 {
+	text-align: center;
+	margin: 2px;
+}
+#guestsignin label {
+	text-align: center;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+#guestsignin input {
+	text-align: center;
+	width: 230px;
+}
+.scustomer{
+	background: grey;
+	padding: 5px;
+}
+.scustomer input:focus
+{ 
+background-color:whitesmoke;
+color: black;
+}
+.shorderlines ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.shorderlines li{
+	list-style-type: none;
+	background-color: grey;
+	border-bottom: 2px solid;
+	margin: 2px 5px;
+	
+}
+#shdcontrol {
+	padding: 5px;
+}
+.shorderline {
+	display:block;
+	padding: 0 5px;
+	vertical-align: top;
+}
+.shorderline a{
+	display: inline-block;
+}
+
+#shcancel {
+	color: yellow !important;
+	margin-left: 30px;
+}
+#shoppingdetails h3{
+	text-align: center;
+	
+}
+
+.shquantity {
+	vertical-align: top;
+	padding-right: 2px;
+}
+.shitem {
+	display: inline-block;
+	width: 280px;
+}
+.shsub  {
+	vertical-align: top;
+	
+}
+.shcontrol {
+	font-size: 12px;
+	
+}
+
+.hideitem {
+	display:none;
+}
+#orderview {
+	display: block;
+	width: 100%;
+	top: 30px;
+}
+
+#clickgetorders {
+	border: solid ;
+	padding:  0;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	background-color: #ccc;
+}
+#clickgetorders h1 {
+	 padding: 0;
+	 margin: 0;
+	 font-size: 16px;
+	 text-align: center;
+}
+#userorder {
+	position: relative;
+	vertical-align: top;
+	display: block;
+	top: 0;
+	width: 200px;
+	height: 200px;
+	border: 3px solid;
+	border-radius:5px;
+	overflow: auto;
+}
+#userorder h5 {
+	text-align: center;
+	background-color: lightblue;
+	margin-top: 0;
+	padding: 4px 0;
+	border-bottom: 1px solid black
+}
+#userorder ul {
+	list-style-type: none;
+	padding-left: 2px;
+}
+#userorder ul li .coName{
+	display: inline-block;
+	width: 160px;
+	text-overflow: ellipsis;
+
+}
+.optioncheck {
+	display: none;
+}
+#requireLogin {
+	display: none;
+}
+#schedulePopUp {
+	border: 5px solid;
+	border-radius:10px;
+	
+	
+}
+#schedulePopUp h3 {
+	width: 100%;
+	text-align: center;
+	background-color: lightblue;
+	margin:  0;
+	border-bottom: 1px solid black
+}
+#schedulePopUp th {
+	border-bottom: 1px solid black;
+	text-align: center;
+	
+
+}
+#schedulePopUp td {
+	border-bottom: 1px solid grey;
+	text-align: left;
+	
+
+}
+#schedulePopUp span {
+	display: inline-block;
+	width: 100px;
+	padding: 0 5px;
+}
+.schedules td{
+	padding-right: 5px;
+}
+.scChecked {
+	padding-left: 5px;
+}
+
+#btorderclose{
+	color:lightgreen;
+}
+
+#btordercancel{
+	float:right;
+	color: red;
+}
+.processing{
+	background-color: yellow;
+	
+}
+.ready{
+	background-color: lightgreen;
+	
+}
+.received{
+	background-color: pink;
+	
+}
+#localorders .horder:nth-child(odd)		{
+	background-color:#eee;
+}
+#localorders .horder:nth-child(even)		{
+	background-color:#fff;
+}
+#localorders{
+	display: block;
+	width: 550px;
+	padding: 0 5px;
+	background: lightblue;
+	}
+#localorders h3{	
+	text-align: center;
+	margin: 0;
+	padding: 0;
+    background: lightblue;
+	}
+#userhistory ul {
+	list-style-type: none;
+	padding-left: 2px;
+}
+#userhistory table body {
+	display: block;
+	height: 400px;
+	overflow: auto;
+}
+.histhead{
+	background-color: #202020;
+	border: 2px solid white;
+	
+}
+.userhisthead h3  {
+	padding: 0;
+ 	text-align: center;
+	margin: 0;
+	
+}
+.historder {
+	background-color: grey;
+	width: 400px;
+	padding: 0 5px;
+}
+.uhline ul{
+	padding: 0;
+	margin: 2px;
+}
+.uhline ul li{
+	padding: 0;
+}
+.histmenu {
+	
+}
+.histitem {
+	display: inline-block;
+	width: 300px;
+	padding-right:10px;
+}
+.histheadtotal{
+	padding-right: 10px;
+}
+#shoppingchart{
+	margin: 4px auto 4px auto;
+	
+}
+#ordertakerwrap{
+	padding: 10px;
+	
+}
+#otcontrols {
+	display: block;
+	 width: 600px;
+	 padding: 5px;
+	display: block;
+	margin: 0 auto;
+	height: 48px;
+	
+}
+#otcontrols  div {
+	float: left;
+	overflow: hidden;
+}
+#otvcontrols {
+	display: block;
+	 width: 400px;
+	 padding: 5px;
+	display: block;
+	margin: 0 auto;
+	height: 48px;
+	
+}
+#otvcontrols  div {
+	float: left;
+	overflow: hidden;
+}
+.onoff {
+	display: block;
+	border: solid thin;
+	height: 28px;
+	width: 100px;
+	margin: 0 0 0 5px;
+	padding: 5px;
+	background: #ccc;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em 0 0 .5em;
+	-webkit-border-radius:  .5em 0 0 .5em;
+	-moz-border-radius:  .5em 0 0 .5em;
+}
+.takeorder  {
+	display: block;
+	border: solid thin;
+	height: 28px;
+	width: 100px;
+	margin: 0 0;
+	padding: 5px;
+	background:  #cccccc;
+}
+#takeorder {
+	font-size: 12px;
+	text-shadow: none;
+	color: yellow;
+}
+.managemenu  {
+	display: block;
+	border: solid thin;
+	height: 28px;
+	width: 120px;
+	margin: 0 0;
+	padding:5px;
+	background: #cccccc;
+	-webkit-border-radius:  0 .5em .5em 0; 
+	-moz-border-radius:  0 .5em .5em 0;
+	border-radius:  0 .5em .5em 0;
+}
+#managemenu {
+	font-size: 12px;
+	text-shadow: none;
+	color: lightblue;
+}	
+.reportmenu  {
+	display: block;
+	border: solid thin;
+	height: 28px;
+	width: 80px;
+	margin: 0 0;
+	padding:5px;
+	background: #cccccc;
+}
+#reportmenu {
+	font-size: 12px;
+	text-shadow: none;
+	color: lightblue;
+}	
+.onoff input {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+
+.onoff input[type="checkbox"] + label {
+	color: black;
+
+}
+#otmenuwrap {
+	display: block;
+	float: left;
+	border: solid thin;
+	margin: 5px;
+	padding: 5px;
+	background: #e9e9e9;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+#otMenu ul{
+padding:0;
+margin:0;
+color:#fff;
+font-family: arial, helvetica, sans-serif;
+white-space:nowrap;
+list-style-type:none;
+}
+#otMenu ul li{
+display:inline;
+padding: 5px 0;
+font-size: 12px;
+}
+#otMenu ul li a{
+	border: solid thin black;
+	padding: 2px 5px;
+	margin: 5px;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	text-decoration: none;
+	text-shadow: none;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top, #666, #000);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+	color: lightblue;
+	
+	
+}
+.onoff input[type="checkbox"] + label {
+	position: relative;
+	top: 0;
+	text-shadow: none !important;
+	border: outset;
+	width: 54px;
+	text-align: center;
+	background: #303030;
+	color: grey;
+}
+.onoff input[type="checkbox"]:checked + label {
+	color: #87FA5A;
+	border: inset;
+	width: 54px;
+	text-align: center;
+	background: #303030
+
+}
+
+#power {
+	position: relative;
+	display: block;
+	top: -32px;
+	left: 66px;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #303030; 
+	-webkit-border-radius: 1em; 
+	-moz-border-radius: 1em;
+	border-radius: 1em;
+	background-image:url('poweroff.png');
+	background-size:16px 16px;
+	background-repeat:no-repeat; 
+	background-position: center;
+	float: left;
+
+}
+
+#ordnum label{
+	display: block;
+	font-size: 10px;
+	border: solid 1px black;
+	text-align: center;
+	text-shadow: none;
+	color: whitesmoke;
+	
+}
+#ordnum div{
+	position: relative;
+	border: solid thin;
+	height: 30px;
+	width: 96px;
+	background: #303030
+}
+
+#ordnum span{
+	position: absolute;
+	background: whitesmoke;
+	top: 15px;
+	left: -2px;
+	color: #303030;
+	text-align: center;
+	text-shadow: none !important;
+	margin: 0 2px;
+	font-size: 12px;
+	width: 49px;
+}
+#ordnum {
+	display: block;
+	border: 1px solid;
+	width: 100px;
+	height: 30px;
+	padding: 4px;
+	margin: 0;
+	background: #ccc;
+	
+}
+#ordnum a {
+	position: relative;
+	display: block;
+	top:-5px;
+	left: 49px;
+	border: solid thin black;
+	padding: 2px 5px;
+	color: blue;
+	text-shadow: none !important;
+	text-decoration: none;
+	font-size: 10px;
+	width: 48px;
+	background: grey;
+	
+}
+
+#ordertaker {
+	margin: 0;
+	padding: 0
+	
+}
+#ordertaker div{
+	display: block;
+	background: #cccccc;
+	margin-left:auto;
+	margin-right: auto;
+	width: 410px;
+	padding: 0 10px 10px;
+	
+}
+#ordertakerheader{
+	-webkit-border-radius: .5em .5em 0 0;
+	-moz-border-radius: .5em .5em 0 0;
+	border-radius: .5em .5em 0 0;
+}
+#ordertaker h1{	
+	margin: 0;
+	font-size: 18px;
+	margin: 0 ;
+	padding: 0
+	
+}
+#ordertaker a{
+	float: right;
+	font-size: 14px;
+	text-shadow: none !important;
+	
+}
+
+#ifordertaker{
+	display: block;
+	border: 4px solid;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	padding:0px;
+	margin: 0;
+	
+}
+.custname{
+	width: 20em;
+	
+}
+.custphone{
+	width: 30em;
+	
+}
+.custemail{
+	width: 20em;
+}
+.custorders{
+	width: 6em;
+}
+.custotal {
+	width: 6em;
+}
+.custselect {
+	width: 2em;
+	padding: 0 5px;
+}
+.customer tr{
+	background: whitesmoke;
+	padding: 0 5px;
+}
+
+#customers h3{
+	
+	text-align: center;
+	background-color: lightblue;
+	padding: 2px;
+	margin: 0
+	
+}
+.dialogcontrol {
+	padding: 5px;
+	margin: 5px 0;
+}
+.allorders {
+	display: block;
+	height: 400px;
+	overflow: auto;
+	
+}
+.allorders tr {
+	border-bottom: solid thin
+}
+.allorders .ordercontrol {
+	vertical-align: top;
+}
+.hlines{
+	display: block;
+	border: solid thin;
+	padding: 5px;
+}
+.hline{
+}
+.group-header {
+	background-color: #fcee21 
+}
+#shdetail{
+	position: relative;
+	top: -6px;
+	height: 20px;
+	background: #bde5f6
+}
+#shsend{
+	position: relative;
+	top: -6px;
+	height: 20px;
+	background: #fef79a;
+}
+
+@-moz-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} 
+@-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} 
+@-ms-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} 
+@keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} 
+#navvend {
+	padding: 0 0;
+	border: solid;
+}
+.otbar h3 {
+	padding: 0;
+	margin:  0;
+	font-size: 1em;
+}
+.otbar {
+	padding: 0;
+	margin:  0;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bde5f6), to(#666));
+	background: -moz-linear-gradient(top, #bde5f6, #666);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bde5f6', endColorstr='#666666');
+}
+#histbody{
+	height: 300px;
+	overflow: auto;
+	
+}
+
+.histdelete  
+{
+	position: relative;
+	margin-left: 20px;
+	color:  #bde5f6 !important;
+	
+}
+.histrorder 
+{
+	position: relative;
+	color: #fef79a !important;
+	
+}
+#vhead{
+	width: 100%;
+	background:url("/styles/clickgetmetag.png");
+	background-position: 10px 5px; 
+	background-size:100px 30px;
+	background-repeat:no-repeat; 
+	background-color: black;
+}
+#userclose{
+	color: #bde5f6;
+}
+.wrapper{
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: calc(100% -60px);
+	bottom: 60px;
+	overflow: auto;
+	
+}
+.orderingstatus {
+	display: block;
+	width: 135px;
+	border: solid thin #303030;
+	height: 20px;
+	margin-left: 10px;
+	text-shadow: none !important;
+	text-align: center;
+	-moz-transition:all 1s ease-in-out;
+	-webkit-transition:all 1s ease-in-out;
+	-o-transition:all 1s ease-in-out;
+	-ms-transition:all 1s ease-in-out;
+	transition:all 1s ease-in-out;
+	-moz-animation:blink normal 2s infinite ease-in-out; 
+	-webkit-animation:blink normal 2s infinite ease-in-out; 
+	-ms-animation:blink normal 2s infinite ease-in-out;
+	animation:blink normal 2s infinite ease-in-out; 
+}
+#gscontrol a {
+	width: 60px;
+	text-align: center;
+}
+#gscancel {
+	color: red;
+}
+#gsok {
+	color: lime;
+	float: right;
+}
+.gsinput {
+	border: solid black;
+	background: #303030;
+	margin-bottom: 5px;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+.horder{
+	display: block;
+	padding: 5px;
+}
+.hohead{
+	background: lightyellow;
+	padding: 2px 5px;
+}
+.hocontrol{
+	
+}
+.honum {
+	display: inline-block;
+	width: 30px;
+}
+.honame {
+	display: inline-block;
+	width: 130px;
+}
+.hodate {
+	display: inline-block;
+	width: 160px;
+}
+.hophone {
+		display: inline-block;
+	width: 100px;
+}
+.hostatus {
+	display: inline-block;
+	width: 45px;
+}
+.horder{
+	border: solid thin black;
+	margin: 5px 0;
+	
+}
+.hoselect {
+    width: 10px;
+}
+.hoitbody {
+	display: block;
+	border: solid 2px #303030;
+	padding: 3px;
+
+}
+#thankyou {
+	margin: 0;
+	padding: 10px;
+	width: 90%;
+	max-width: 300px;
+	
+}
+#tyframe{
+	background: white;
+	color: #303030;
+	padding: 10px;
+	
+}
+#tyframe img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tyframe h2{
+	font-size: 1.5em;
+	text-align: center;
+	text-shadow: none !important;
+}
+#tyframe h3{
+	font-size: 1.2em;
+	text-align: center;
+	text-shadow: none !important;
+}
+#cgtag{
+	max-width: 280px;
+}
+#gsdinetype{
+	display: block;
+	
+}
+#gsdinopt{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+	padding: 5px 10px;
+	height: 20px;
+	
+}
+#gsdinopt a{
+	display: block;
+	border: solid 2px #303030;
+	width: 62px;
+	margin: 2px;
+	float: left;
+	text-align: center;
+	background: black;	
+	text-shadow: none !important;
+	font-size: 12px;
+	text-decoration: none;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+#delivery {
+	color: lime;
+}
+#takeout{
+	color: yellow;
+	border: solid thin black;
+}
+.sdt{
+	display: block;
+	position: relative;
+	padding: 5px;
+	height: 20px;
+	
+}
+.sdt span{
+	border: 2px solid lightblue;
+	background: black;
+	text-align: center;
+	color: lightyellow;
+ display:block;
+ width: 100px;
+   height: 100%;
+   margin: 0 auto;
+   	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+#voption h3{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	background: lightblue;
+	
+}
+#bodywrap{
+	min-width: 600px;
+}
+.readytime{
+	font-size: 14px;
+	color: lightblue;
+	text-shadow: none;
+	width: 64px;
+	text-align: center;
+}
+.processbuttons{
+	display: block;
+	
+}
+.processmessage{
+	display: block;
+	background: grey;
+	width: 200px;
+	border: solid 2px black;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	
+}
+.processhead{
+	background: #303030;
+	text-align: center;
+	color: lightblue;
+	padding: 3px;
+	text-shadow: none;
+	
+}
+#readymessage{
+	background: #303030;
+	width:175px;
+	color: lightblue;
+	padding: 0 5px;
+	
+}
+.readymessage{
+	padding: 5px 5px 10px;
+	
+}
+#selectLocation ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: solid thin;
+	
+}
+#enterLocation{
+	border: solid;
+	padding: 5px;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	background: lightblue;
+}
+.elocation {
+	padding: 5px;
+	border: solid thin;
+	margin: 5px;
+}
+.locinput label {
+	padding: 5px;
+	background: lightyellow;
+	text-align: center;
+	
+}
+
+
+.lstate {
+	width:50px !important;
+	margin: 0 3px 3px;
+	
+}
+#statezip{
+	display: inline-block;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+#lzip {
+	width: 75px;
+}
+
+.elocation div {
+	padding: 5px;
+	border: solid thin whitesmoke;
+	margin: 5px;
+}
+#enterLocation h3{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.selectlochead{
+	text-shadow: none;
+	text-align: center;
+	color: lightblue;
+	padding: 2px
+}
+.locationremove{
+	text-shadow: none;
+	font-size: 12px;
+}
+.locationwrap {
+	padding: 5px;
+	width: 216px;
+}
+#locaddress div{
+	padding: 2px;
+}
+.gsnote div{
+	padding: 2px;
+}
+#locaddress {
+	height: 175px
+}
+.linput{
+	padding: 0 5px;
+}
+.locationname{
+	display: inline-block;
+	background: lightblue;
+	width: 140px;
+	height: 20px;
+	padding: 4px;
+	margin: 4px;
+	text-align: center;
+	border: solid thin #303030;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+.locOk {
+	float: right
+}
+#locationpop{
+	background: black;
+	border: solid black;
+}
+.deliveryhead{
+	color: lightyellow;
+	text-align: center;
+	text-shadow: none;
+	font-size: 18px;
+}
+.locationremove{
+	
+}
+.orderaddress{
+	clear: both;
+}
+.orderaddress label{
+	
+	margin: 0;
+	float: left;
+}
+.orderaddress span{
+	
+	margin: 0;
+}
+
+#enterLocation label {
+	color: whitesmoke;
+	text-align: center;
+	text-shadow: none;
+	font-size: 12px;
+	border: black;
+	margin-bottom: 0;
+}
+
+.lname
+
+.lnote {
+	width:203px;
+	margin: 0 5px 3px;
+}
+.login {
+	padding: 5px 0px;
+}
+#login label{
+	text-align: center;
+	
+}
+#login input{
+	font-size: 14px;
+	text-align: center;
+	width: 160px;
+	padding: 0 10px;
+	margin: 0 10px;
+}
+#login{
+	border: solid black;
+	width: 200px;
+	background: lightblue;
+	padding: 0 0 5px;
+	margin: 10px auto;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+#login h3 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	background: black;
+	color: lightyellow
+}
+#adminmenuwrap {
+	position: absolute;
+	background: whitesmoke;
+	border: solid thin;
+	left: 20px;
+	
+}
+#adminmenuwrap ul{
+		margin: 0;
+	padding: 0;
+	list-style-type: none;
+	
+}
+#adminmenu ul  {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	
+}
+#adminmenu a {
+	display: block;
+	
+	width: 7em;
+	padding: 3px 12px 3px 8px;
+	text-decoration: none;
+}
+#adminmenu li ul {
+ 	display: none;
+	
+}
+#adminmenu li:hover ul {
+ 	display: block;
+	padding: 0 5px;
+}
+#adminmenu ul li:hover {
+	background: #ddd;
+}
+#lsubmit{
+	
+}
+#guestregister {
+	
+	padding: 10px;
+	width: 250px;
+}
+#guestregister h3 {
+	text-align: center;
+	margin: 2px;
+}
+#guestregister label {
+	text-align: center;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+#guestregister input {
+	text-align: center;
+	width: 230px;
+}
+.gscontrol a {
+	width: 60px;
+	text-align: center;
+}
+#regcancel {
+	color: red;
+}
+#regok {
+	color: lime;
+	float: right;
+}
+.itemsSearch {
+	display: inline-block;
+	width: 250px;
+	height:30px;
+	padding:  0 5px;
+	margin: 0;
+	border: solid thin lightblue;
+	background: lightblue;
+	margin: 0 5px;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+.itemsSearch label {
+	float: left;
+}
+.itemsSearch input {
+	float: right;
+	padding: 0 6px;
+	margin: 2px 10px;
+	width: 230px;
+	height:22px;
+	top: 0px;
+}
+.ui-autocomplete {
+	
+}

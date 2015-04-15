@@ -1,0 +1,10 @@
+extends layout2
+
+block content
+	#bodywrap
+		section(class="main-content")
+			div(class="content-wrapper")
+				include includes/orderprint.html
+block scripts
+	script(src='/vendor/#{phone}/vendor.js')
+	script(src='/javascripts/orderprint.js')

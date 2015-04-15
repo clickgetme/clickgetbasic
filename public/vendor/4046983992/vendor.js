@@ -1,0 +1,1 @@
+var vendor={name: "MANGOS", phone: "4046983992", email:"mangoscaribbeanrestaurant@gmail.com" , dinetypes: [{ type: "takeout", name: "Take Out" }, { type: "eatin", name: "Eat in" }, { type: "delivery", name: "Delivery" }], location: { "address": "180 Auburn Ave.", "city": "Atlanta", "state": "GA", "zip": "30303", "phones": [{ "type": "Store", "number": "4048403559" }] } };

@@ -1,0 +1,1 @@
+﻿var vendor = { name: "Sample", phone: "template", dinetypes: [{ type: "takeout", name: "Take Out" }, { type: "eatin", name: "Eat in" }, { type: "delivery", name: "Delivery" }] };

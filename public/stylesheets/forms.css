@@ -1,0 +1,222 @@
+:-moz-any-link :focus {
+	outline: none;
+}
+
+:focus {
+	-moz-outline-style: none;
+	outline: none;
+}
+
+body {
+	font-size: 80%;
+	margin: 0;
+	padding: 0;
+	font-family: tahoma, geneva, sans-serif;
+	background-color: #5c87b2;
+	padding: 10px;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #0653AB;
+	outline: 0;
+	text-decoration: none;
+}
+
+a:hover {
+	outline: 0;
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+/* s1.0 - Page Containers */
+#letterbox {
+	margin: 10px auto;
+	width: 883px;
+	background-color: #364158;
+	border: 8px solid #D4D4D4;
+	padding: 1px 1px 10px 1px;
+}
+
+.line-grey {
+	background: url(images/line-grey.gif) 0 0 repeat-x;
+	height: 2px;
+	margin: 8px 25px 20px 0;
+}
+
+
+
+div.empty {
+	background: #F1F0E5 url(images/back_green-fade.gif) 0 0 repeat-x;
+}
+
+div.empty div.callout-green {
+	
+}
+/* sX.0 -  Main Content */
+.main-content {
+	color: #666666;
+	position: absolute;
+	right: 20px;
+	padding-top: 20px;
+	width: 585px;
+	padding-bottom: 20px;
+}
+
+div.main-content div.main-content {
+	
+}
+
+.main-content h1 {
+	color: #5890D1;
+	font-size: 1.9em;
+	font-family: Trebuchet MS;
+	border-bottom: 1px solid #cccccc;
+	margin: 0 10px 0 0;
+}
+
+.main-content h2 {
+	color: #666666;
+	font-size: 1.3em;
+	font-weight: normal;
+	margin: 10px 10px 5px 0;
+}
+
+.main-content p {
+	margin: 10px 10px 10px 0;
+	line-height: 1.55em;
+}
+
+/* sX.1 -  Main Content Sub Styles */
+.sub-grey {
+	border-top: 1px solid #D4D4D4;
+	border-bottom: 1px solid #D4D4D4;
+	background-color: #F4F4F4;
+	margin: 10px 10px 0 0;
+	padding: 0 10px 20px 15px;
+}
+
+.sub-white {
+	margin: 10px 10px 0 0;
+	padding: 0 10px 20px 15px;
+}
+
+img.screen-grab-r {
+	margin-right: -8px;
+	text-align: right;
+	padding: 0 0 0 10px;
+}
+
+div.main-content a.screenshot {
+	float: right;
+	padding: 10px 10px 0 0
+}
+
+.content-foot {
+	border-top: 1px solid #D4D4D4;
+	font-size: .9em;
+	line-height: 1.45em;
+	margin: 10px 20px 0 0;
+	padding: 10px 10px 30px 0;
+}
+
+.clear {
+	clear: both;
+}
+
+table.grid {
+	background: #EEEEEE;
+}
+
+table.grid th {
+	background-color: #F4F4F4;
+}
+
+table.grid td {
+	background-color: #FFFFFF;
+}
+
+
+
+label.error {
+	display: block;
+	color: red;
+	font-style: italic;
+	font-weight: normal;
+}
+
+input.error {
+	border: 2px solid red;
+}
+
+
+
+form table td {
+	padding: 5px;
+
+}
+
+form table input {
+	width: 200px;
+	padding: 3px;
+	margin: 0;
+}
+
+textarea {
+	width: 400px
+}
+
+td.label {
+	width: 150px;
+}
+
+tr.required td.label {
+	font-weight: bold;
+	background: url('/styles/images/backRequiredGray.gif') no-repeat right
+		center;
+}
+
+
+td.field input.error, td.field select.error, tr.errorRow td.field input,tr.errorRow td.field select {
+	border: 2px solid red;
+	background-color: #FFFFD5;
+	margin: 0;
+	color: red;
+}
+
+tr td.field div.formError {
+	display: none;
+	color: #FF0000;
+}
+
+tr.errorRow td.field div.formError {
+	display: block;
+	font-weight: normal;
+}
+
+div.error {
+	color: red;
+}
+
+div.error a {
+	color: #336699;
+	font-size: 12px;
+	text-decoration: underline
+}
+
+div.tooltip {
+	position: absolute;
+	left: 30px;
+	bottom: 0;
+	display: none; /* in case javascript is disabled */
+	width: 170px;
+	background-color: #F4F1E9;
+	z-index: 100;
+	padding: 10px;
+	border: 1px solid #CCCCCC;
+}

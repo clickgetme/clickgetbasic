@@ -1,0 +1,23 @@
+﻿extends layout2
+block head
+	link(rel='stylesheet', href='/styles/menubuilder.css')
+	meta(charset='utf-8')
+	meta(name='viewport', content='width=device-width, initial-scale=1.0')
+	script(src='http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js')
+	script(src='http://code.jquery.com/jquery-1.9.1.min.js')
+	link(rel='stylesheet', href='http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css')
+	script(src='http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js')
+	link(href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css', rel='stylesheet')
+	script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js')
+
+block content
+	section(class="featured")
+		div(class="content-wrapper")
+			include includes/createvendor.html
+	section(class="main-content")
+
+body
+
+
+block scripts
+	script(src='/javascripts/createvendor.js')

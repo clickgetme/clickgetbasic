@@ -1,0 +1,311 @@
+﻿<!-- menubuiler.html -->
+<div id="menubuilder">
+    <!--<div class="choosemenu">
+        <select data-bind="options: menusName, value: selectedMenu, optionsCaption: 'Choose...'" data-role="none"></select>
+        <input type="button" value="Initalize" data-bind="click: intialize, enable: $root.selectedMenu" data-role="none"  style="display:none; "/>
+    </div>-->
+    <a href="#popupList" data-rel="popup" data-transition="pop" data-role="none">list</a>
+    <div data-role="popup" id="popupList" class="ui-corner-all custom-corners">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <h5>Lists</h5>
+        <div class="lists">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>List</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ko foreach: lists -->
+                    <tr>
+                        <td style="vertical-align: top; padding-left: 2px;">
+                            <span data-bind=" text: listName"></span>
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext" data-bind='click: $root.removeList'>Remove</a>
+
+                        </td>
+                        <td>
+                            <div class="listitems">
+                                <!-- ko foreach: list -->
+                                <div class="listitem">
+                                    <input type="text" data-bind="value: $data" data-role="none"  />
+                                    <a href="#" data-bind="click: $root.removeListItem">-</a>
+                                </div>
+                                <!-- /ko -->
+                                <div class="addlist listitem">
+                                    <input type="text" data-bind="value: listItem" data-role="none" placeholder="New Item"/>
+                                    <a href="#" data-bind="click: $root.addListItem">+</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+                    <tr>
+                        <td>
+                            <input type="text" data-bind="value: listName" placeholder="New List Name" data-role="none" />
+                        </td>
+                        <td>
+                            <a href="#" title="new list" class="ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-notext" data-bind='click: $root.addList'>Add List</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <input type="button" value="Save List" data-bind="click: $root.saveLists" data-role="none" />
+
+    </div>
+    
+    
+</div>
+<div id="menus">
+    <!-- ko foreach: menus, as: 'menu' -->
+    <a href="#" class="showHideMenu" data-bind='attr: { "menuId": menuId }'>Hide Menu</a>
+    <div class="menu" data-bind='attr: { "id": "menu" + menuId }'>
+        <a href="#" data-bind="click: $root.hideAll">Hide All Items</a>
+        <a href="#" data-bind="click: $root.showAll">Show All Items</a>
+        <div class="menugroups">
+            <div>
+                <div data-bind="foreach: groups, as: 'group'">
+                    <div class="group">
+                        <div>
+                            <div class="groupcontrol">
+                                <div>
+
+                                    <label>Group <span data-bind="text: $index()"></span></label>
+                                    <a href="#" data-bind="click: $root.removeGroup">Remove Group</a>
+                                    <div>
+                                        <input type="text" data-bind="value: groupName" placeholder="group name" />
+                                        <input type="text" data-bind="value: groupDescription" placeholder="group description" />
+                                    </div>
+                                    <a href="#" data-bind="click: $root.cloneGroup">Clone Group</a>
+                                    <a href="#" class="showHideItems" data-bind='attr: { "group": groupId }'>Hide Items</a>
+                                    <a href="#" data-bind="visible: ($index() < $parent.groups().length - 1), click: $root.moveGroupDown">down</a>
+                                    <a href="#" data-bind="visible: ($index() > 0), click: $root.moveGroupUp">up</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="items">
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div data-bind='attr: { "id": groupId }'>
+                                                <ul data-bind="foreach: groupItems, as: 'groupItem'">
+                                                    <li>
+                                                        <div class="item">
+                                                            <table>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td colspan="3" class="itemhead">
+                                                                            <span data-bind="text: 'Item ' + ($index() + 1)"></span>
+                                                                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-d ui-btn-icon-notext" data-bind="visible: ($index() < $parent.groupItems().length - 1), click: $root.moveItemDown">down</a>
+                                                                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-u ui-btn-icon-notext" data-bind="visible: ($index() > 0), click: $root.moveItemUp">up</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <table style="width: 100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td colspan="2">
+                                                                                            <table>
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td class="itemname">
+                                                                                                            <input type="text" data-bind="value: itemName" placeholder="item name" />
+                                                                                                        </td>
+                                                                                                        <td class="itemdescription">
+                                                                                                            <input type="text" data-bind="value: itemDescription" placeholder="item description" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="itemtitle">
+                                                                                                            <input type="text" data-bind="value: title" placeholder="title" />
+                                                                                                        </td>
+                                                                                                        <td class="itemextra">
+                                                                                                            <input type="text" data-bind="value: extra" placeholder="extra" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="2">
+                                                                                            <div class="itemcontrol">
+                                                                                                <label>
+                                                                                                    Show Item
+                                                                                                    <input id="Checkbox2" type="checkbox" data-bind="checked: showItem" data-role="none" />
+                                                                                                </label>
+                                                                                                <a href="#" data-bind=" click: $root.removeItem">Remove</a>
+                                                                                                <a href="#" data-bind=" click: $root.cloneItem">Clone</a>
+                                                                                                <a href="#" data-bind=" click: $root.popIncludes">Includes</a>
+                                                                                                <a href="#" data-bind=" click: $root.popSelects">Selects</a>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td class="sizes">
+                                                                            <table>
+                                                                                <tbody data-bind="foreach: itemSizes, as: 'size'">
+                                                                                    <tr class="size">
+                                                                                        <td class="sizename">
+                                                                                            <input type="text" data-bind="value: sizeName, hasfocus: !sizeName" placeholder=" size name" />
+                                                                                        </td>
+                                                                                        <td class="sizeprice">
+                                                                                            <input type="text" data-bind="value: sizePrice" placeholder="price" />
+
+                                                                                        </td>
+                                                                                        <td class="sizeenable">
+                                                                                            <input type="checkbox" data-bind="checked: sizeEnabled" data-role="none" />
+                                                                                        </td>
+                                                                                        <td><a href="#" data-bind="click: $root.removeSize" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext">Remove Size</a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <td class="addsize"><a href="#" data-bind="click: $root.addSize">Add Size</a></td>
+                                                                                    </tr>
+                                                                                </tfoot>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" data-bind="click: $root.addItem">Add Item</a>
+                        </div>
+                    </div>
+                </div>
+                <div><a href="#" data-bind="click: $root.addGroup">Add Group</a></div>
+            </div>
+            <div>
+                <table style="width: 100px">
+                    <tr>
+                        <td><a href="#" data-bind='click: $root.save' class="ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-left">Save</a></td>
+                        <td><a href="#" data-bind="click: $root.preview" class="ui-btn ui-shadow ui-corner-all ui-icon-eye ui-btn-icon-left">preview</a></td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+    <div class="dialogwrapper" style="display: none">
+        <div data-role="popup" id="menuPreview" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" data-dismissible="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <h5>Menus</h5>
+            <iframe id="ifordertaker" src="http://" width="400" height="500" seamless=""></iframe>
+        </div>
+    </div>
+    <div class="dialogwrapper" style="display: none">
+        <div data-role="popup" id="includesDialogPage" class="ui-corner-all custom-corners">
+            <div data-role="content">
+                <div data-role="foreach: includes">
+                    <table>
+                        <tr>
+
+                            <!-- ko foreach: includes -->
+                            <td class="includes">
+                                <div class="includesname"><span data-bind="text: listName"></span><a href="#" data-bind="    click: $root.removeIncludes">- </a></div>
+                                <div class="includelist" data-bind="foreach: list">
+                                    <div class="include">
+                                        <input type="checkbox" class="ckincluded" data-bind="checked: $parent.includeList, value: include.name, attr: { 'id': 'i-' + include.name } " data-role="none" />
+                                        <span class="nameprice">
+                                            <input type="text" class="includename" data-bind="value: include.name" data-role="none" />
+                                            <input type="text" class="includeprice" data-bind="value: include.price, attr: { 'id': ($parent.listName + include.name).replace(/ /g, '') }" data-role="none" />
+                                        </span>
+                                        <input type="checkbox" class="ckdefault" data-bind="checked: $parent.includeSelected, value: include.name, attr: { 'id': 'd-' + include.name } " data-role="none" />
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- /ko -->
+                            <td class="addincludes">
+                                <select data-bind="options: selectsListNames, value: $root.includeListName" data-role="none"></select>
+                                <a href="#" data-bind="click: addIncludes"> + </a>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <table style="width: 100%">
+                                        <tbody>
+                                            <tr style="width: 100%">
+                                                <td style="width: 50%"><a href='#' class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a></td>
+                                                <td style="width: 50%"><a data-bind="click: $root.includeSave" href='#' class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Save</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialogwrapper" style="display: none">
+        <div data-role="popup" id="selectsDialogPage" class="ui-corner-all custom-corners">
+            <div data-role="content">
+                <table>
+                    <caption> Selects </caption>
+                    <tr class="selects">
+                        <!-- ko foreach: selects -->
+                        <td>
+                            <div class="selectlistname"><a href="#" data-bind="click: $root.removeSelect"> - </a><span data-bind="text: selectName"></span></div>
+                            <div class="selectlist" data-bind="foreach: options">
+                                <div class="selectoption">
+                                    <input type="checkbox" data-bind="checked: $parent.selectList, value: option.name" data-role="none" />
+                                    <input type="text" class="optionname" data-bind="value: option.name" data-role="none" />
+                                    <input type="text" class="optionprice" data-bind="value: option.price" placeholder="Price" data-role="none" />
+                                    <input type="radio" data-bind='value: JSON.stringify(option), checked: $parent.selectDefault, attr: { "name": $parent.selectName }' class="optiondefault" data-role="none" />
+                                </div>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <td>
+                            <div class="addselect">
+                                <select data-bind="options: selectsListNames, value: $root.selectedListName" data-role="none"></select>
+                                <input type="text" id="selectListName" data-bind="value: selectListName" placeholder="Display Name" data-role="none" />
+                                <a href="#" data-bind="click: addSelect"> + </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <table style="width: 100%">
+                                    <tbody>
+                                        <tr style="width: 100%">
+                                            <td style="width: 50%"><a href='#' class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a></td>
+                                            <td style="width: 50%"><a data-bind="click: $root.selectsSave" href='#' class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Save</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,1 @@
+var vendor ={"name":"John Howard","phone":"4048575487","email":"jehoward01@gmail.com","dinetypes":[{"type":"eatin","name":"Eat In"}],"location":{"address":"3116 Esplanade Circle","city":"Atlanta","state":"GA","zip":"30311","phones":[{"type":"store","number":"4048575487"}]}}

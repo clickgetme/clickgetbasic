@@ -1,0 +1,1 @@
+﻿var vendor = { name: "Beckham's B & M Bar-B-Que", phone: "2168897427", online: false,  dinetypes: [{ type: "takeout", name: "Take Out" }], location: { "address": "12626 Bellaire Rd", "city": "Cleveland", "state": "OH", "zip": "44135", "phones": [{ "type": "tel", "number": "2168897427" }] } };

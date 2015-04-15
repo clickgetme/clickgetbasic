@@ -1,0 +1,20 @@
+﻿extends layout2
+
+block content
+    #login.bg_lightblue
+        h3 Login
+            #Linput.login
+            p.gsinput
+                label Vendor Phone
+                input#lvphone(type='text', data-role='none', placeholder='Vendor Phone')
+            p.gsinput
+                label User Name:
+                input#luserName(type='text', data-role='none', placeholder='User Name')
+            p.gsinput
+                label Password:
+                input#lpassword(type='password', data-role='none')
+            p
+                a#lsubmit(href='#')  Login 
+
+block scripts
+    script(src='/javascripts/vlogin.js')

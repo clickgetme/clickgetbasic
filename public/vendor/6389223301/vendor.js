@@ -1,0 +1,1 @@
+var vendor = { name: "Metz Caf'e", phone: "6389223301", dinetypes: [{ type: "takeout", name: "Take Out" }], online: false, location: { "address": "231 superior ave", "city": "Cleveland", "state": "OH", "zip": "44114", "phones": [{ "type": "Mobile", "number": "2168578553" }] } };

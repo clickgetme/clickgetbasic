@@ -1,0 +1,295 @@
+body {
+  padding-left : 5px;
+}
+
+.items ul{
+list-style-type: none;
+padding: 0;
+margin-left: 0;
+font-weight: bold;
+}
+
+.item{
+    vertical-align:top;
+    padding-left : 2px;
+    padding-right : 0px;
+    border: 1px solid black;
+    background-color:darkgrey;   
+    
+}
+.item tr{
+  vertical-align:top;
+}
+
+.item a {
+    color:black;
+    border: 1px solid;
+    padding-left: 2px;
+    padding-right:2px;
+    
+}
+.itemcontrol{
+    
+}
+.addsize div{
+  padding-left: 150px;
+ 
+}
+.itemhead{
+    background-color: grey;
+    border:  0 1px 0 1px solid;
+    padding-left: 6px;
+   
+}
+.itemhead span {
+  float: left;
+  
+}
+.itemhead a {
+  float: right;
+  
+}
+.item {
+    border: 2px solid;
+    padding-left: 2px;
+    padding-right:2px;
+    padding-bottom:2px;
+    margin-bottom:2px;
+    
+}
+.item table {
+  width: 100%;
+}
+.sizes {
+  min-width: 100px;
+  max-width: 120px;
+    background-color:black;
+    padding-left:6px;
+}
+.size {
+    vertical-align:top;
+    
+}
+.size table{
+  width: 100%;    
+}
+
+
+.group {
+    border: 2px solid;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-bottom: 5px;
+}
+.group thead{
+    border: 1px solid;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: lightgrey
+}
+.group tfoot{
+    border: 1px solid;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: lightgrey
+}
+.prices {
+  text-align: left;
+    
+}
+.prices {
+  width: 220px;
+    
+}
+.prices .sizename{
+  position: relative;
+  left: 0px;
+}
+.prices .sizeprice{
+  position: relative;
+  left: 10px;
+}
+.itemname{
+  width: 50%;
+  text-align: center;
+  
+}
+div.hideitem {display:none;}  
+.featured{
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menugroups {
+  padding:10px;
+  border: 3px solid;
+  width: 100%;
+}
+
+.itemcontrol label {
+ float: left;
+ padding-left: 5px;
+ padding-right: 25px;
+ padding-top:2px;
+ 
+}
+.itemcontrol a {
+ float: left;
+ padding-left: 5px;
+ padding-right: 5px;
+ padding-top:5px;
+ margin-right:10px;
+ padding-bottom:5px;
+ width = 100px;
+ background-color:lightgrey;
+ border: 2px solid black;
+ 
+}
+.sizeprice {
+  min-width: 4em;
+  max-width: 4em;
+}
+.sizename {
+  min-width: 4em;
+  max-width: 14em;
+}
+.groupcontrol {
+  float: left;
+}
+.groupcontrol div {
+  float: left;
+  padding-top: 6x;
+}
+.groupcontrol div label{
+  float: left;
+  padding-left:3px;
+  padding-right:6px;
+  padding-top: 6px;
+}
+.groupcontrol div input{
+  float: left;
+  margin: 0 2px 0 2px;
+  padding: 0 5px 0 5px;
+}
+.groupcontrol div a{
+  position: relative;
+  top: 10px;
+  margin-:8px;
+  padding: 4px 4px 0px 4px;
+  border: solid thin
+}
+.groupcontrol div div{
+  padding-left: 2px;
+  padding-right:4px
+}
+.group {
+  background-color: lightgrey;
+}
+
+ .selectinclude{
+  padding: 4px 4px;
+}
+.list input{
+  float: left;
+  padding: 0 2px;
+  
+}
+.list span {
+  padding-left 3px;
+  float: left;
+  display: inline-block;
+   width: 140px;
+}
+.list div {
+ border: 1px solid
+}
+.selects {
+  vertical-align: top;
+}
+.selectoption span{
+  display: inline-block;
+  width: 80px;  
+}
+
+.selectoption {
+  border: solid 1px;
+  padding: 2px;
+  
+}
+.optionprice{
+  width: 40px;
+}
+.includeprice{
+  width: 40px;
+}
+.lists table tbody tr td div span{
+  
+}
+.listitem {
+  display: inline-block;
+  border: 1px solid;
+  padding: 0 2px;  
+  margin-bottom: 2px;
+}
+
+.listitem a{
+  border: 1px solid;
+  padding-right: 1px;
+  hieght: 4px;
+}
+.listitems {
+  
+}
+.ckincluded{
+  float:left;
+  
+}
+.ckdefault{
+  float: right;
+  padding-left:2px;
+}
+.nameprice {
+ 
+}
+
+.nameprice input{
+  float: left;
+  padding: 0px 2px;
+}
+.includes {
+  vertical-align: top;
+  width: 250px;
+}
+
+.includes div{
+  display: inline-block;
+  padding: 2px 3px;
+  border: solid 1px;
+}
+.includeitem{
+   display: inline-block;
+   width: 250px;
+   
+}
+.addincludes{
+  vertical-align: top;
+  padding: 0 5 0;
+  
+}
+#popupList{
+  padding: 10px;
+  width: 95%;
+  hieght: 95%;
+  over
+}
+#popupList h5{
+  text-align: center;
+  font-size: 14px;
+}
+#menuPreview{
+  background: #303030;
+  padding: 10px;
+}
+#createvendor div{
+  display: inline-block;
+}

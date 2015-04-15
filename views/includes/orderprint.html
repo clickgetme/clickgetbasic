@@ -1,0 +1,89 @@
+﻿
+<!-- License:  LGPL 2.1 or QZ INDUSTRIES SOURCE CODE LICENSE -->
+
+<div id="content" bgcolor="#FFF380">
+    <div ><h1 id="title">QZ Print Plugin</h1></div><br /><br /><br />
+
+    <table> 
+        <tr>
+
+            <td valign="top">
+                <h2>All Printers</h2>
+                <input type="button" onclick="findPrinter()" value="Detect Printer"><br />
+                <input id="printer" type="text" value="zebra" size="15"><br />
+                <input type="button" onclick="findPrinters()" value="List All Printers"><br />
+                <input type="button" onclick="useDefaultPrinter()" value="Use Default Printer"><br /><br />
+                <!-- NEW QZ APPLET TAG USAGE -- RECOMMENDED -->
+                <!--
+                    <applet id="qz" archive="./qz-print.jar" name="QZ Print Plugin" code="qz.PrintApplet.class" width="55" height="55">
+                        <param name="jnlp_href" value="qz-print_jnlp.jnlp">
+                        <param name="cache_option" value="plugin">
+                        <param name="disable_logging" value="false">
+                        <param name="initial_focus" value="false">
+                    </applet><br />
+                    -->
+                <!-- OLD JZEBRA TAG USAGE -- FOR UPGRADES -->
+                <!--
+                    <applet name="jzebra" archive="./qz-print.jar" code="qz.PrintApplet.class" width="55" height="55">
+                        <param name="jnlp_href" value="qz-print_jnlp.jnlp">
+                        <param name="cache_option" value="plugin">
+                        <param name="disable_logging" value="false">
+                        <param name="initial_focus" value="false">
+                        <param name="printer" value="zebra">
+                    </applet><br />
+                    -->
+                <div class="printers">
+                    <ul data-bind="foreach: myorders.printers">
+                        <li data-bind="text: $data"></li>
+                    </ul>
+                </div>
+                <div data-bind="text:myorders.queCount"></div>
+</td>
+
+        </tr>
+    </table>
+    <div class="orders inorders incoming">
+        <div class="otbar">
+            <h3>Incoming</h3>
+        </div>
+        <div data-bind="foreach: myorders.inOrders" class="inorders">
+            <div class="order" data-bind="attr: { 'from': from, 'date': date, 'id': id }">
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td class="ordernumber" data-bind="text: number"></td>
+                            <td class="ordername"><span data-bind="text: ordername"></span></td>
+                            <td class="ordertime" data-bind='text: time'></td>
+                            <td class="pickuptime" data-bind='text: pickuptime'></td>
+                            <td class="orderphone"><span data-bind="text: orderphone"></span></td>
+                            <td class="orderstatus" data-bind='text: status'></td>
+                            <td class="ordercontrol" rowspan="1">
+                                <a href="#" class="statusbutton" data-bind='click: $parent.myorders.processOrder, enable: process'><span data-bind="    attr: { 'id': 'p' + id() }">Print</span></a>
+                                <a href="#" class="statusbutton" data-bind='click: $parent.myorders.readyIn, visible: dinetype() != "Delivery"'><span data-bind="    attr: { 'id': 'ri' + id() }">Ready In</span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="orderline" colspan="5">
+                                <div data-bind="foreach: orderLines" class="lines">
+                                    <div class="line">
+                                        <span data-bind="text: quantity"></span>
+                                        <span data-bind="html: itemFormat(item)"></span>
+                                    </div>
+                                </div>
+                                <div class="ordertotal">
+                                    <label>total:&nbsp;<span data-bind="text: total"></span>&nbsp;</label>
+                                </div>
+                                <!-- ko if: dinetype() == 'Delivery' -->
+                                <div class="orderaddress" data-bind="template: { name: 'address-template', data: deliveryLocation }"></div>
+                                <!-- /ko -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div id="orderpreview"></div>
+</div>
+<canvas id="hidden_screenshot" style="display:none;"></canvas>

@@ -1,0 +1,60 @@
+﻿
+<!-- includes.html -->
+<div class="dialogwrapper">
+    <div data-role="popup" id="includesDialogPage" class="ui-corner-all custom-corners" data-bind="with: includeBuild">
+        <div data-role="header">
+            <div class="ui-title" id="includeshead">
+            </div>
+
+        </div>
+        <div data-role="content">
+            <div data-role="foreach: includes, , as:'Include'">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="checkbox" data-bind="checked: Include.groupSelected" />
+                            <span data-bind="text: Include.groupName"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Available</th>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="availables">
+
+                                <ul data-bind="foreach: Include.avail">
+                                    <li>
+                                        <div class="includeavail">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" class="includecheckbox" data-bind="checked: $parent.includeSelected, value: name, attr: { 'id': name }" /></td>
+                                                        <td><span data-bind="text: name"></span></td>
+                                                        <td>
+                                                            <input type="checkbox" class="includecheckbox" data-bind="checked: $parent.includeDefaults, value: name" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </td>
+                        <td>
+                            <div></div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

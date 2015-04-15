@@ -1,0 +1,75 @@
+<!-- register.html -->
+<div class="dialogwrapper" style="display:none">
+    <div id="register" data-role="popup" data-enhance="false" data-overlay-theme="b" data-theme="a" data-dismissible="false">
+        <div data-role="header">
+            <h4 id="order">Sign In</h4>
+        </div>
+        <div class="p" data-role="none">
+            <div>
+                <table>
+                    <caption>contact</caption>
+                    <tbody>
+                        <tr>
+                            <td style="width:5em;">Name:</td>
+                            <td><input type="text" name="Name" data-bind="value:register.name" /> </td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td><input type="text" name="email" data-bind="value:register.email" /></td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td><input type="text" name="phone" data-bind="value:register.phone" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <select id="chosen" data-placeholder="Choose your Carrier" class="chosen" data-bind="value: register.carrier">
+                                    <option value="">Choose your Carrier</option>
+                                    <!-- ko foreach: carriers -->
+                                    <option data-bind="value: email, text: carrier"></option>
+                                    <!-- /ko -->
+                                </select>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Notification options</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div>
+                                    <span>
+                                        <label>
+                                            <input name="notifyByText" type="checkbox" data-bind="jqmChecked: register.notifyByText" data-role="none"/>
+                                            Text</label>
+
+                                    </span>
+                                    <span>
+                                        <label>
+                                            <input name="notifyByEmail" type="checkbox"  data-bind="jqmChecked: register.notifyByEmail" data-role="none" />
+                                            Email</label>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+            <table style="width: 100%">
+                <tbody>
+                    <tr style="width: 100%">
+                        <td style="width: 50%"><a data-bind="click:register.registerCancel" href='#' class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Cancel</a></td>
+                        <td style="width: 50%"><a data-bind="click:register.registerNow" href='#' class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Sign In</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

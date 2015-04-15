@@ -1,0 +1,1 @@
+var vendor = { name: "KING FONG", phone: "2162517678", online: false, dinetypes: [{ type: "takeout", name: "Take Out" }, { type: "delivery", name: "Delivery" }], location: { "address": "14055 Lorain Ave.", "city": "Cleveland", "state": "OH", "zip": "44111", "phones": [{ "type": "tel", "number": "2162517678" }, { "type": "tel", "number": "2162517691" }] } };

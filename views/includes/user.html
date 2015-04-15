@@ -1,0 +1,50 @@
+﻿<!-- user.html -->
+<div class="dialogwrapper">
+    <div data-role="popup" id="userhistory" class="ui-corner-all">
+	<a  href='#' id="userclose" data-rel="back" class="canceldlg">X</a>
+        <div class="userhisthead">
+            <h3>Order History</h3>
+        </div>
+		
+        <div data-role="content">
+            <div id="histbody">
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="ohnum">#</td>
+                            <td class="ohdate">date</td>
+                            <td class="ohtotal">total</td>
+                        </tr>
+                    </thead>
+                    <tbody   data-bind="foreach: vuser.history" >
+                        <tr class="histhead">
+                            <td class="ohnum"data-bind='text: number'></td>
+                            <td class="ohdate" data-bind='text: date'></td>
+                            <td class="ohtotal" data-bind='text: total'></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="historder">
+                                <div class="uhline" >
+                                    <ul  data-bind="foreach: lines">
+                                        <li  data-bind="attr: { 'linei': $index }" >
+                                            <span data-bind='text: quantity'></span>
+                                            <span class="histitem" data-bind="html: itemFormat(item)"></span>
+                                            <span data-bind='text: price'></span>
+                                        </li>
+                                    </ul>
+                                    <div class="histmenu" >
+                                        <a href="#"  class="histrorder cgbut" data-bind="attr: { 'histi': $index() }" data-role="none" >Add to Order</a>
+                                        <a href="#"   class="histdelete" data-bind="attr: { 'histi': $index() }"  data-role="none" ><i class="fa fa-trash-o"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+                 
+                 
+        </div>
+    </div>
+</div>

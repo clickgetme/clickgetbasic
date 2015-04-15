@@ -1,0 +1,8 @@
+<!-- carrier.html -->
+
+<select id="chosen" data-bind="value:email" data-placeholder="Choose your Carrier" class="chosen-select" style="width:350px;" >
+            <option value=""></option>         
+    <!-- ko foreach: carriers -->
+        <option data-bind="value: email, text: carrier"></option>
+    <!-- /ko -->
+</select>
